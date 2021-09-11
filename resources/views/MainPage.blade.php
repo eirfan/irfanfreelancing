@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <head>
 <title>My Blog</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=1024">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -17,11 +18,15 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 </style>
+<meta name="google-site-verification" content="PdLF89Amjja6DhbO1umcO5Mm9CJ1bhy8yZ0sAAmzOCA" />
+</head>
 <body class="w3-light-grey">
 
 <div class=".container">
@@ -149,13 +154,13 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- Labels / tags -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Tags</h4>
+      <h4>Skills</h4>
     </div>
     <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+    <p><span class="w3-tag w3-black w3-margin-bottom">Programming</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Graphic Design</span> 
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Leadership</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Science</span> 
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Statistic</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Data Science</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Apps Development</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Computer Vision</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Web Development</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Game Development</span>
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
     </p>
     </div>

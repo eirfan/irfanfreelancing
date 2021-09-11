@@ -296,7 +296,7 @@ echo $exception;
 public function pyscript(){
 //try{
 //
-$result=exec("python C:\Users\SCuser\Desktop\ComputerVision.py");
+$result=exec("python C:\Users\SCuser\Documents\GitHub\irfanfreelancing\public\VirtualMouse.py");
 
 //}catch(Exception $exception){
 //echo 'Message: '.$exception->getMessage();
