@@ -24,7 +24,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-light-grey">
 
-<div class="container">
+<div class=".container">
 
 <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -33,7 +33,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
   <img src="{{url('I-FUN.png')}}" style='width:150px' />
-  <h1><b>MY BLOG</b></h1>
+  <h1><b>MY Freelancing Blog</b></h1>
   <p>Welcome to the blog of <span class="w3-tag">Eirfanz</span></p>
 </header>
 
@@ -44,9 +44,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <br>
+    <div class="container">
     <div class="w3-container">
-      <h3><b>Information Details</b></h3>
+     <nav class="navbar navbar-dark bg-dark" >
+       <h2 style="color: white">What is I-FUN ?</h2>
+     </nav>
+    </div>
+    <br>
+      <h3><b>Details</b></h3>
       <h5>Date :  <span class="w3-opacity"><?php echo date("Y/m/d"). "<br>" ?></span></h5>
     </div>
 
@@ -56,9 +62,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/resume'><b>READ MORE »</b></a></button></p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -68,6 +72,12 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card-4 w3-margin w3-white">
   <!--<img src="{{asset('storage/profile/Muhammad Hamizan bin yusniprofile.jpg')}}" alt="Norway" style="width:100%">-->
     <div class="w3-container">
+      <br>
+      
+        <nav class="navbar navbar-dark bg-dark" >
+          <h2 style="color: white">Current Self Project </h2>
+        </nav>
+       
       <h3><b>Resume Automatic Generator</b></h3>
       <h5>Date :<span class="w3-opacity"><?php echo date("Y/m/d")."<br>" ?></span></h5>
     </div>
@@ -78,9 +88,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><a href="/resumegenerator"<b>READ MORE »</b></a></button></p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -104,26 +112,36 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h4>List of Projects Done</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
+      <div class='overflow-auto'>
+      <li class="w3-padding-16" >
+        
+        
+      
+        <span class="w3-large">Digital Notepad Apps</span><br>
+        <span>Java Android Studio</span>
+      </li>
+      </div>
+      <div class="overflow-auto">
+      <li class="w3-padding-16" >
+       
+        <span class="w3-large">Healthy Life Tracker</span><br>
+        
+        <span class="text-sm-right">MVC using Eclipse</span>
+
+      </li>
+    </div>
+   
       <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
+       
+        <span class="w3-large">Schedulling Management System</span><br>
+        <span><p class="text-left">MVC using Eclipse</p></span>
       </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
+      <div class="overflow-auto">
+        <li class="w3-padding-16">
+        <span class="w3-large">Virtual Mouse and Keyboard</span><br>
+        <span>Computer Vision Python</span>
       </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>
+    </div>
     </ul>
   </div>
   <hr>
@@ -153,11 +171,26 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 </div>
 <!-- Footer -->
+<div class=".container">
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
   <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
   <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <br/>
+  <p style="color:white">Technology Used</p>
+  <div class="card-footer text-muted">
+    <div class="nav d-flex justify-content-between">
+    <div class="overflow-auto">
+  <img class=".img-thumbnail" src="{{url('laravel.png')}}" style="width:100px;height:100px"/>
+  <img class=".img-thumbnail" src="{{url('java.png')}}" style="width:100px;height:100px"/>
+  <img class=".img-thumbnail" src="{{url('python.png')}}" style="width:100px;height:100px"/>
+  <img class=".img-thumbnail" src="{{url('android.png')}}" style="width:150px;height:150px"/>
+  <img class=".img-thumbnail" src="{{url('flutter.png')}}" style="width:100px;height:100px"/>
+  <img class=".img-thumbnail" src="{{url('opencv.png')}}" style="width:100px;height:100px"/>
+</div>
+    </div>
+  </div>
 </footer>
+</div>
 
 </body>
 </html>

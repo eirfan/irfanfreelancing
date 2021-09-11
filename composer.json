@@ -6,14 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "doctrine/dbal": "^3.1",
         "fruitcake/laravel-cors": "^2.0",
         "google/auth": "^1.18",
         "google/cloud-core": "^1.42",
         "guzzlehttp/guzzle": "^7.3",
         "guzzlehttp/psr7": "^1.2",
+        "jenssegers/mongodb": "^3.8",
         "kreait/firebase-php": "^5.23",
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
+        "mongodb/mongodb": "^1.9",
         "sentry/sentry-laravel": "^2.8",
         "symfony/process": "^5.3"
     },
