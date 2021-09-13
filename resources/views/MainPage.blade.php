@@ -39,7 +39,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <header class="w3-container w3-center w3-padding-32">
   <img src="{{url('I-FUN.png')}}" style='width:150px' />
   <h1><b>MY Freelancing Blog</b></h1>
-  <p>Welcome to the blog of <span class="w3-tag">Eirfanz</span></p>
+  <p>Welcome to the live of <span class="w3-tag">Eirfanz</span></p>
 </header>
 
 <!-- Grid -->
@@ -62,10 +62,10 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="w3-container">
-      <p>I-FUN is basically a logo I created as a symbol for all my projects, This blog is useful if you want to discover what is Science Computer in the perspective of a student which is me.My vision is to introduce the real and advance technology to all Malaysian Science Computer Major Students, all this knowledge I got from joining multiple Online Courses and MOOC. Feel free to drop any comments here</p>
+      <p>I-FUN is basically a logo I created as a symbol for all my self-projects and Freelancing, This page is useful if you want to discover what is Science Computer in the perspective of a student which is me.My vision is to introduce the real and advance technology to all Malaysian Science Computer Major Students, all this knowledge I got from joining multiple Online Courses and MOOC. Feel free to drop any comments here</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/resume'><b>READ MORE »</b></a></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/resume'><b>ABOUT ME »</b></a></button></p>
         </div>
         
       </div>
@@ -96,6 +96,45 @@ and is wrapped around the whole page content, except for the footer in this exam
         
       </div>
     </div>
+  </div>
+
+  
+    <div class="container mt-5">
+      <div class="d-flex justify-content-left row">
+          <div class="col-md-8">
+              <div class="d-flex flex-column comment-section">
+                  <div class="bg-white p-2">
+                    <nav class="navbar navbar-dark bg-dark" >
+                      <h2 style="color: white">Feedback</h2>  
+                    </nav>
+                    <br>
+                      <div class="d-flex flex-row user-info"><img class="rounded-circle" src="{{url('I-FUN.png')}}" width="40">
+                          <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">How do you feel about the website ?</span><span class="date text-black-50"></span></div>
+                      </div>
+                      <div class="mt-2">
+
+                          <p class="comment-text">Feel free to leave a feedback or any constructive advice. All the information will be saved inside the firebase</p>
+                      </div>
+                  </div>
+                  <div class="bg-white">
+                      <div class="d-flex flex-row fs-12">
+                          
+                          <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+                          
+                      </div>
+                  </div>
+                  <div class="bg-light p-2">
+                    <form action="/storecommentfirestore" method="post" enctype="multipart/form-data">
+                      @csrf
+                      <div class="d-flex flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea" name="commentsection"></textarea></div>
+                      <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="submit">Post comment</button></div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+
   </div>
 <!-- END BLOG ENTRIES -->
 </div>
@@ -161,7 +200,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Leadership</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Science</span> 
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Statistic</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Data Science</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Apps Development</span>
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Computer Vision</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Web Development</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Game Development</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Gamer</span>
     </p>
     </div>
   </div>
@@ -175,13 +214,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END w3-content -->
 </div>
 </div>
+
+
+
 <!-- Footer -->
 <div class=".container">
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+
   <br/>
-  <p style="color:white">Technology Used</p>
+  <p style="color:white;font-size:28px">Technology Used</p>
   <div class="card-footer text-muted">
     <div class="nav d-flex justify-content-between">
     <div class="overflow-auto">

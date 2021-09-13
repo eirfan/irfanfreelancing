@@ -36,3 +36,5 @@ Route::get('/trainingquery','App\Http\Controllers\TaskController@trainingquery')
 
 
 Route::get('/laravelfirebase','App\Http\Controllers\TaskController@laravelfirebase');
+
+Route::post('/storecommentfirestore','App\Http\Controllers\TaskController@storecommentfirestore');

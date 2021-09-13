@@ -11,6 +11,9 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Kreait\Firebase;
 use Kreait\Firebase\Factory;
+use Kreait\Firebase\Database;
+use Google\Cloud\Firestore\FirestoreClient;
+use Kreait\Firebase\Firestore;
 use Kreait\Firebase\ServiceAccount;
 use App\Models\ConnectionManager;
 use App\Models\Customer;
@@ -20,6 +23,9 @@ use App\Models\Languages;
 use App\Models\WorkExperience;
 use App\Models\Organization;
 use App\Models\Event;
+use Google\Cloud\Firestore\V1\FirestoreClient as V1FirestoreClient;
+use Kreait\Firebase\Exception\FirebaseException;
+
 class TaskController extends Controller
 {
 
@@ -287,6 +293,25 @@ echo $exception;
 
 }
 
+}
+
+public function storecommentfirestore(Request $request){
+   $comment = $request->get('commentsection');
+   echo $comment;
+   
+  try{
+    $firebase= (new Factory)->withServiceAccount(__DIR__.'/laravelfirebaseone-firebase-adminsdk-btv6w-58fc01519b.json')->withDatabaseUri('https://laravelfirebaseone-default-rtdb.firebaseio.com/');
+    $firestore= $firebase->createFirestore();
+    $database= $firestore->database();
+    $db= $database->collection('feedback');
+    $data= $db->document('yOkGXX9Q86QHz5IMZlCO')->set(['comment'=>$comment]);
+  
+
+
+  }catch(FirebaseException $firebaseexception){
+        echo $firebaseexception->getMessage();
+
+  }
 }
 
 
