@@ -124,9 +124,11 @@ and is wrapped around the whole page content, except for the footer in this exam
                       </div>
                   </div>
                   <div class="bg-light p-2">
-                    <form action="/storecommentfirestore" method="post" enctype="multipart/form-data">
+                    <form action="/firestoreoperation" method="post" enctype="multipart/form-data">
                       @csrf
-                      <div class="d-flex flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea" name="commentsection"></textarea></div>
+                      <input type="hidden" name="action" value="storecomment">
+                      <div class="form-group"><input type="text" name="commentname" id="fullname" class="form-control" placeholder="Please insert your name"> </div>
+                      <div class="d-flex flex-row align-items-start"><textarea placeholder="Comment Section" class="form-control ml-1 shadow-none textarea" name="commentsection"></textarea></div>
                       <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="submit">Post comment</button></div>
                     </form>
                   </div>

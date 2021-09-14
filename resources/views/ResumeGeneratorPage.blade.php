@@ -5,7 +5,7 @@ $action = 'generate';
 
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=1024">
   <head>
     <title>Resume Generator</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -392,7 +392,7 @@ $action = 'generate';
           <label for="cvimage">Upload Your Image<span>*</span></label>
           <input  id="cvimage" name='cvimage' accept="image/*" type="file" class="form-control-file" required />
         </div>
-        <input type='hidden' name='action' value='edit'>
+        <input type='hidden' name='action' value='generate'>
         <div class="btn-block">
           <button type="submit">Generate Resume</button>
         </div>

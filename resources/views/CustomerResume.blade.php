@@ -9,18 +9,10 @@ use App\Models\Organization;
 use App\Models\Event;
 use Illuminate\Support\Facades\DB;
 
+$organization= $nooforganization;
 
-$database=new DatabaseManager();
-$works=$database->getworkexperience($customer);
-$events=$database->getevent($customer);
-$languages=$database->getlanguage($customer);
-$skills=$database->getskills($customer);
-$organizations=$database->getorganization($customer);
 
-echo 'Number of skills : '.count($skills);
-for($i=0;$i<count($works);$i++){
-  echo $works[$i]->toString();
-}
+
 
  ?>
 
@@ -28,7 +20,7 @@ for($i=0;$i<count($works);$i++){
  <html>
  <title>ResumePage</title>
  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=1024">
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -83,7 +75,7 @@ for($i=0;$i<count($works);$i++){
            <hr>
 
            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-           <?php for($i=0;$i<count($skills);$i++):?>
+           <?php for($i=0;$i<count($organization);$i++):?>
            <?php $skill=$skills[$i];?>
            <p><?=$skill->get_nameskills()?></p>
            <div class="w3-light-grey w3-round-xlarge w3-small">

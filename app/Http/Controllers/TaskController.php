@@ -165,15 +165,15 @@ echo 'action : '.$action;
 
 if(strcasecmp($action,"generate")==0){
   echo'readhere';
-$database = new DatabaseMAnager();
+//$database = new DatabaseMAnager();
 
-$database->addCustomer($customer);
+//$database->addCustomer($customer);
 
 for($i=0;$i<$noofskills;$i++){
   try{
     if((strcasecmp($skillscollection[$i]->get_nameskills(),""))!=0){
 //  $skillscollection[$i]->toString();
-  $database->addSkills($skillscollection[$i],$i+1);
+  //$database->addSkills($skillscollection[$i],$i+1);
 }
 }catch(Exception $execption){
 
@@ -182,20 +182,20 @@ for($i=0;$i<$noofskills;$i++){
 for($i=0;$i<$nooflanguages;$i++){
   if((strcasecmp($languagecollection[$i]->get_namelanguage(),""))!=0){
 //  $languagecollection[$i]->toString();
-  $database->addLanguage($languagecollection[$i],$i+1);
+ //$database->addLanguage($languagecollection[$i],$i+1);
 }
 }
 for($i=0;$i<$noofwork;$i++){
   if((strcasecmp($workcollection[$i]->get_companyname(),""))!=0){
   //$workcollection[$i]->toString();
-  $database->addWorkExperience($workcollection[$i],($i+1));
+  //$database->addWorkExperience($workcollection[$i],($i+1));
 }
 }
 for($i=0;$i<$nooforganization;$i++){
   try{
     if((strcasecmp($organizationcollection[$i]->get_nameorganization(),""))!=0){
 //    $organizationcollection[$i]->toString();
-    $database->addOrganization($organizationcollection[$i],$i+1);
+   // $database->addOrganization($organizationcollection[$i],$i+1);
   }
   }catch(Exception $exception){
     echo $exception->Message();
@@ -205,30 +205,39 @@ for($i=0;$i<$noofevent;$i++){
   try{
 if((strcasecmp($eventcollection[$i]->get_nameevent(),""))!=0){
 //    $eventcollection[$i]->toString();
-    $database->addEvent($eventcollection[$i],$i+1);
+   // $database->addEvent($eventcollection[$i],$i+1);
   }
 
   }catch(Exception $exception){
 }
 
 }
-return view('CustomerResume')->with('customer',$customer);
-}
+
+$customerdata = [
+   'customer'=> $customer,
+   'organization'=> $organizationcollection,
+   'language'=> $languagecollection,
+   'work'=>$workcollection,
+   'event'=>$eventcollection,
+   'skills'=>$skillscollection
+
+];
+return view('CustomerResume')->with(array('customer'=>$customer,'nooforganization'=>$nooforganization,'organization'=>$organizationcollection,'language'=>$languagecollection,'event'=>$eventcollection,'skill'=>$skillscollection,'work'=>$workcollection));
 
 /* ************************************************************************************************************************************** */
-
+}
 
 
 else if(strcasecmp($action,"edit")==0){
-  $database = new DatabaseMAnager();
+//  $database = new DatabaseMAnager();
 
-  $database->updatecustomer($customer);
+ // $database->updatecustomer($customer);
 
   for($i=0;$i<$noofskills;$i++){
     try{
       if((strcasecmp($skillscollection[$i]->get_nameskills(),""))!=0){
   //  $skillscollection[$i]->toString();
-    $database->updateskills($skillscollection[$i],$i+1);
+   // $database->updateskills($skillscollection[$i],$i+1);
   }
   }catch(Exception $execption){
 
@@ -237,20 +246,20 @@ else if(strcasecmp($action,"edit")==0){
   for($i=0;$i<$nooflanguages;$i++){
     if((strcasecmp($languagecollection[$i]->get_namelanguage(),""))!=0){
   //  $languagecollection[$i]->toString();
-    $database->updatelanguage($languagecollection[$i],$i+1);
+   // $database->updatelanguage($languagecollection[$i],$i+1);
   }
   }
   for($i=0;$i<$noofwork;$i++){
     if((strcasecmp($workcollection[$i]->get_companyname(),""))!=0){
     //$workcollection[$i]->toString();
-    $database->updatework($workcollection[$i],$i+1);
+   // $database->updatework($workcollection[$i],$i+1);
   }
   }
   for($i=0;$i<$nooforganization;$i++){
     try{
       if((strcasecmp($organizationcollection[$i]->get_nameorganization(),""))!=0){
   //    $organizationcollection[$i]->toString();
-      $database->updateOrganization($organizationcollection[$i],$i+1);
+     // $database->updateOrganization($organizationcollection[$i],$i+1);
     }
     }catch(Exception $exception){
       echo $exception->Message();
@@ -260,7 +269,7 @@ else if(strcasecmp($action,"edit")==0){
     try{
   if((strcasecmp($eventcollection[$i]->get_nameevent(),""))!=0){
   //    $eventcollection[$i]->toString();
-      $database->updateEvent($eventcollection[$i],$i+1);
+     // $database->updateEvent($eventcollection[$i],$i+1);
     }
 
     }catch(Exception $exception){
@@ -295,23 +304,36 @@ echo $exception;
 
 }
 
-public function storecommentfirestore(Request $request){
+public function firestoreoperation(Request $request){
    $comment = $request->get('commentsection');
+   $name =$request->get('commentname');
    echo $comment;
-   
-  try{
-    $firebase= (new Factory)->withServiceAccount(__DIR__.'/laravelfirebaseone-firebase-adminsdk-btv6w-58fc01519b.json')->withDatabaseUri('https://laravelfirebaseone-default-rtdb.firebaseio.com/');
-    $firestore= $firebase->createFirestore();
-    $database= $firestore->database();
-    $db= $database->collection('feedback');
-    $data= $db->document('yOkGXX9Q86QHz5IMZlCO')->set(['comment'=>$comment]);
+
+   $action = $request->get("action");
+
+   if(strcasecmp($action,"storecomment")==0){
+    try{
+      $firebase= (new Factory)->withServiceAccount(__DIR__.'/laravelfirebaseone-firebase-adminsdk-btv6w-58fc01519b.json')->withDatabaseUri('https://laravelfirebaseone-default-rtdb.firebaseio.com/');
+      $firestoresequence= $firebase->createFirestore();
+      $sequence= $firestoresequence->database()->collection('sequence')->document('sequencenumber')->snapshot();
+      $firestore= $firebase->createFirestore();
+      $database= $firestore->database();
+      $db= $database->collection('feedback');
+      $data = $db->document($sequence->data()['number'].$name)->set(['Comment '=>$comment]);
+      //update sequence
+      $sequencenumber = $sequence->data()['number'] + 1;
+      $sequence=$firestoresequence->database()->collection('sequence')->document('sequencenumber')->set(['number'=> $sequencenumber]);
   
+  
+    }catch(FirebaseException $firebaseexception){
+          echo $firebaseexception->getMessage();
+  
+    }
 
 
-  }catch(FirebaseException $firebaseexception){
-        echo $firebaseexception->getMessage();
-
-  }
+   }
+   
+  
 }
 
 
