@@ -77,9 +77,9 @@ $institutionname=$request->get('institutionname');
 $coursename=$request->get('coursename');
 $fileextension= $request->file('cvimage')->extension();
 $filename= $request->file('cvimage')->storeAs('public/profile',$name.'profile.'.$fileextension);
-$skillscollection= array('skillone','skilltwo','skillthree','skillfour','skillfive');
+$skillscollection= array();
 $languagecollection= array('languageone','languagetwo','languagethree');
-$workcollection= array('workone','worktwo','workthree','workfour');
+$workcollection= array();
 $organizationcollection = array('organizationone','organizationtwo','organizationthree','organizationfour','organizationfive');
 $eventcollection=array('eventone','eventtwo','eventthree','eventfour','eventfive');
 
@@ -93,8 +93,14 @@ for($i=0;$i<5;$i++){
   //get skills
   $skills = $request->get('skils'.($i+1));
   $proficiencyskill= $request->get('proficiencyskill'.($i+1));
-  $skillsmodel = new Skills($skills,$proficiencyskill,$customer);
-  $skillscollection[$i]=$skillsmodel;
+  
+  
+  if(strcasecmp($skills,"")==0 && strcasecmp($proficiencyskill,"")==0){
+    break;
+  }else{
+    $skillsmodel = new Skills($skills,$proficiencyskill,$customer);
+    array_push($skillscollection,$skillsmodel);
+  }
 
 }
 for($i=0;$i<3;$i++){
@@ -114,8 +120,14 @@ for($i=0;$i<4;$i++){
   $jobdescribtion=$request->get('describe'.($i+1));
   $startwork=$request->get('startwork'.($i+1));
   $endwork=$request->get('endwork'.($i+1));
+  if(strcasecmp($companyname,"")==0 && strcasecmp($jobposition,"")==0){
+    break;
+  }
+  else{
+    echo "read work herehehrehrhe";
   $work= new WorkExperience($companyname,$jobposition,$jobdescribtion,$startwork,$endwork,$customer);
-  $workcollection[$i]=$work;
+  array_push($workcollection,$work);
+  }
 }
 
 
@@ -172,6 +184,9 @@ if(strcasecmp($action,"generate")==0){
 for($i=0;$i<$noofskills;$i++){
   try{
     if((strcasecmp($skillscollection[$i]->get_nameskills(),""))!=0){
+      
+      $noofskills=$i;
+      break;
 //  $skillscollection[$i]->toString();
   //$database->addSkills($skillscollection[$i],$i+1);
 }
@@ -187,6 +202,8 @@ for($i=0;$i<$nooflanguages;$i++){
 }
 for($i=0;$i<$noofwork;$i++){
   if((strcasecmp($workcollection[$i]->get_companyname(),""))!=0){
+    $noofwork=$i;
+    break;
   //$workcollection[$i]->toString();
   //$database->addWorkExperience($workcollection[$i],($i+1));
 }
@@ -222,7 +239,7 @@ $customerdata = [
    'skills'=>$skillscollection
 
 ];
-return view('CustomerResume')->with(array('customer'=>$customer,'nooforganization'=>$nooforganization,'organization'=>$organizationcollection,'language'=>$languagecollection,'event'=>$eventcollection,'skill'=>$skillscollection,'work'=>$workcollection));
+return view('CustomerResume')->with(array('customer'=>$customer,'nooforganization'=>$nooforganization,'organizationcollection'=>$organizationcollection,'languagecollection'=>$languagecollection,'eventcollection'=>$eventcollection,'skillscollection'=>$skillscollection,'workcollection'=>$workcollection,'noofskills'=>$noofskills,'nooflanguages'=>$nooflanguages,'noofevent'=>$noofevent,'noofwork'=>$noofwork));
 
 /* ************************************************************************************************************************************** */
 }

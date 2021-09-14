@@ -8,8 +8,10 @@ use App\Models\WorkExperience;
 use App\Models\Organization;
 use App\Models\Event;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-$organization= $nooforganization;
+
+
 
 
 
@@ -75,8 +77,8 @@ $organization= $nooforganization;
            <hr>
 
            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-           <?php for($i=0;$i<count($organization);$i++):?>
-           <?php $skill=$skills[$i];?>
+           <?php for($i=0;$i<count($skillscollection);$i++):?>
+           <?php $skill=$skillscollection[$i];?>
            <p><?=$skill->get_nameskills()?></p>
            <div class="w3-light-grey w3-round-xlarge w3-small">
              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?=$skill->get_proficiencyskills()?>%"><?=$skill->get_proficiencyskills()?>%</div>
@@ -85,7 +87,7 @@ $organization= $nooforganization;
            <br>
 
            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-           <?php foreach($languages as $language):?>
+           <?php foreach($languagecollection as $language):?>
            <p><?=$language->get_namelanguage()?></p>
            <div class="w3-light-grey w3-round-xlarge">
              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:<?=$language->get_proficiencylanguage()?>%"><?php if($language->get_proficiencylanguage()==25):?>Elementary<?php endif; ?><?php if($language->get_proficiencylanguage()==50):?>Intermediate<?php endif; ?> <?php if($language->get_proficiencylanguage()==75): ?>Advanced<?php endif; ?> <?php if($language->get_proficiencylanguage()==90): ?>Proficient<?php endif ?></div>
@@ -104,12 +106,15 @@ $organization= $nooforganization;
 
        <div class="w3-container w3-card w3-white w3-margin-bottom">
          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-         <?php foreach($works as $work): ?>
+         <?php foreach($workcollection as $work): ?>
+
+        
          <div class="w3-container">
            <h5 class="w3-opacity"><b><?=$work->get_positionwork()?> / <?=$work->get_companyname()?></b></h5>
-           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?=$work->get_startwork()?><span class="w3-tag w3-teal w3-round"><?=$work->get_endwork()?></span></h6>
+           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?=$work->get_startwork()." " ?><span class="w3-tag w3-teal w3-round">  <?=$work->get_endwork()?></span></h6>
            <p><?=$work->get_describework()?></p>
            <hr>
+           
          <?php endforeach ?>
          </div>
 
@@ -117,20 +122,21 @@ $organization= $nooforganization;
 
        <div class="w3-container w3-card w3-white">
          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+         
          <div class="w3-container">
-           <h5 class="w3-opacity"><b>Universiti Teknologi Mara, UiTM </b></h5>
+           <h5 class="w3-opacity"><b><?=$customer->get_institutionname();?> </b></h5>
            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Now</h6>
-           <p>Barchelor Degree of Science Computer(Hons)</p>
+           <p><?=$customer->get_coursename();?></p>
            <hr>
          </div>
          <div class="w3-container">
-           <h5 class="w3-opacity"><b>Kolej Matrikulasi Negeri Sembilan</b></h5>
+           <h5 class="w3-opacity"><b><?=$customer->get_secondaryschool()?></b></h5>
            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018- 2019</h6>
            <p>Pre-Universiti Certificate Level Science Stream </p>
            <hr>
          </div>
          <div class="w3-container">
-           <h5 class="w3-opacity"><b>SMK Kompleks KLIA</b></h5>
+           <h5 class="w3-opacity"><b><?=$customer->get_primaryschool()?></b></h5>
            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2017</h6>
            <p>SPM Sciece Stream</p><br>
          </div>
