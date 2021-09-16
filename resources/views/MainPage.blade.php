@@ -4,6 +4,7 @@
 <title>My Blog</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1024">
+<meta name="description" content="Freelancing Website ">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">

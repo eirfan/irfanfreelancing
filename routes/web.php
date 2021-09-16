@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; # don't forgot to add thi
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +38,9 @@ Route::post('/resumegeneratorcontroller','App\Http\Controllers\TaskController@re
 
 Route::get('/trainingquery','App\Http\Controllers\TaskController@trainingquery');
 
+Route::get('/storage/{nameoffile}', function($nameoffile){
+  return Storage::disk('public')->get($nameoffile);
+});
 
 Route::get('/laravelfirebase','App\Http\Controllers\TaskController@laravelfirebase');
 

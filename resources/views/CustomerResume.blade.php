@@ -11,10 +11,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 
+try{
+$contents =Storage::disk('public')->get('hamizan.png');
+echo "file can be readed";
 
-
-
-
+}catch(Exception $exception){
+  echo "file cannot be read";
+}
 
  ?>
 
@@ -64,7 +67,7 @@ use Illuminate\Http\Request;
 
        <div class="w3-white w3-text-grey w3-card-4">
          <div class="w3-display-container">
-           <img src="{{url('irfan.jpg')}}" style="width:100%" alt="Avatar">
+           <img src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%" alt="Avatar">
            <div class="w3-display-bottomleft w3-container w3-text-black">
              <h2 style="Color:white">{{$customer->get_name()}}</h2>
            </div>

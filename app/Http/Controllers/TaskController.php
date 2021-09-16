@@ -76,7 +76,10 @@ $highereducation=$request->get('highereducation');
 $institutionname=$request->get('institutionname');
 $coursename=$request->get('coursename');
 $fileextension= $request->file('cvimage')->extension();
-$filename= $request->file('cvimage')->storeAs('public/profile',$name.'profile.'.$fileextension);
+$nameoffile=$name.'profile.'.$fileextension;
+$nameoffile=str_replace(' ','',$nameoffile);
+echo $nameoffile;
+$filename= $request->file('cvimage')->storeAs('public/',$nameoffile);
 $skillscollection= array();
 $languagecollection= array('languageone','languagetwo','languagethree');
 $workcollection= array();
@@ -239,8 +242,7 @@ $customerdata = [
    'skills'=>$skillscollection
 
 ];
-return view('CustomerResume')->with(array('customer'=>$customer,'nooforganization'=>$nooforganization,'organizationcollection'=>$organizationcollection,'languagecollection'=>$languagecollection,'eventcollection'=>$eventcollection,'skillscollection'=>$skillscollection,'workcollection'=>$workcollection,'noofskills'=>$noofskills,'nooflanguages'=>$nooflanguages,'noofevent'=>$noofevent,'noofwork'=>$noofwork));
-
+return view('CustomerResume')->with(array('customer'=>$customer,'nooforganization'=>$nooforganization,'organizationcollection'=>$organizationcollection,'languagecollection'=>$languagecollection,'eventcollection'=>$eventcollection,'skillscollection'=>$skillscollection,'workcollection'=>$workcollection,'noofskills'=>$noofskills,'nooflanguages'=>$nooflanguages,'noofevent'=>$noofevent,'noofwork'=>$noofwork, 'nameoffile'=>$nameoffile));
 /* ************************************************************************************************************************************** */
 }
 
@@ -340,12 +342,13 @@ public function firestoreoperation(Request $request){
       //update sequence
       $sequencenumber = $sequence->data()['number'] + 1;
       $sequence=$firestoresequence->database()->collection('sequence')->document('sequencenumber')->set(['number'=> $sequencenumber]);
-  
+      return view('MainPage');
   
     }catch(FirebaseException $firebaseexception){
           echo $firebaseexception->getMessage();
   
     }
+
 
 
    }
