@@ -23,12 +23,24 @@ echo "file can be readed";
 
  <!DOCTYPE html>
  <html>
+   <head>
  <title>ResumePage</title>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=1024">
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  <style>
  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
  * {box-sizing: border-box}
@@ -144,69 +156,78 @@ echo "file can be readed";
            <p>SPM Sciece Stream</p><br>
          </div>
        </div>
+       <br>
+       <br>
 
 
- <div class="w3-container w3-card w3-white w3-margin-top">
-   <h1>Certificates Hall</h1>
-   <div style="display:inline-block;height:100%;width:100%;overflow:scroll">
-    <img src="{{url('COCOne.png')}}" style="width:200px; height:120%;"/>
-    <img src="{{url('COCtwo.jpg')}}" style="width:200px; height:120%;"/>
-    <img src="{{url('COCthree.png')}}" style="width:200px;height:120%"/>
-    <img src="{{url('COCfour.png')}}" style="width:150px;height:120%"/>
-    <img src="{{url('COCfive.png')}}" style="width:150px;height:120%"/>
-    <img src="{{url('COCsix.png')}}" style="width:200px;height:120%"/>
-  </div>
- </div>
+       <div class="w3-container w3-card w3-white w3-margin-bottom" style="overflow: scroll">
+        <h1>Programmigng Languages</h1>
+        <p>HTML</p>
+      <div class="container">
+        <div class="skills html">87%</div>
+      </div>
+   
+      <p>CSS</p>
+      <div class="container">
+        <div class="skills css">80%</div>
+      </div>
+   
+      <p>JavaScript</p>
+      <div class="container">
+        <div class="skills js">65%</div>
+      </div>
+   
+      <p>PHP</p>
+      <div class="container">
+        <div class="skills php">60%</div>
+      </div>
+   
+      <p>Java</p>
+      <div class="container">
+        <div class="skills java">90%</div>
+      </div>
+      <p>Object Oriented Programming</p>
+      <div class="container">
+        <div class="skills oop">90%</div>
+      </div>
      <!-- End Right Column -->
      </div>
 
    <!-- End Grid -->
-   </div>
-   <div class="w3-container w3-card w3-white" style="overflow: scroll">
-     <h1>Programmigng Languages</h1>
-     <p>HTML</p>
-   <div class="container">
-     <div class="skills html">87%</div>
-   </div>
+     </div>
 
-   <p>CSS</p>
-   <div class="container">
-     <div class="skills css">80%</div>
-   </div>
 
-   <p>JavaScript</p>
-   <div class="container">
-     <div class="skills js">65%</div>
-   </div>
 
-   <p>PHP</p>
-   <div class="container">
-     <div class="skills php">60%</div>
-   </div>
-
-   <p>Java</p>
-   <div class="container">
-     <div class="skills java">90%</div>
-   </div>
-   <p>Object Oriented Programming</p>
-   <div class="container">
-     <div class="skills oop">90%</div>
-   </div>
 
 
    <!-- End Page Container -->
  </div>
+ <div class="w3-container w3-card w3-white w3-margin-top">
+  <h1>Certificates Hall</h1>
+  <div style="display:inline-block;height:100%;width:100%;overflow:scroll">
+   <img src="{{url('COCOne.png')}}" style="width:200px; height:120%;"/>
+   <img src="{{url('COCtwo.jpg')}}" style="width:200px; height:120%;"/>
+   <img src="{{url('COCthree.png')}}" style="width:200px;height:120%"/>
+   <img src="{{url('COCfour.png')}}" style="width:150px;height:120%"/>
+   <img src="{{url('COCfive.png')}}" style="width:150px;height:120%"/>
+   <img src="{{url('COCsix.png')}}" style="width:200px;height:120%"/>
+ </div>
+</div>
+ </div>
+ 
 
- <footer class="w3-container w3-teal w3-center w3-margin-top">
-   <p>Find me on social media.</p>
+ <footer class="page-footer font-small blue">
+   <div class="footer-copyright text-center py-3">
+   <p>Find me on social media</p>
    <i class="fa fa-facebook-official w3-hover-opacity"></i>
    <i class="fa fa-instagram w3-hover-opacity"></i>
    <i class="fa fa-snapchat w3-hover-opacity"></i>
    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
    <i class="fa fa-twitter w3-hover-opacity"></i>
    <i class="fa fa-linkedin w3-hover-opacity"></i>
-
+  </div>
  </footer>
 
  </body>
+   </head>
  </html>

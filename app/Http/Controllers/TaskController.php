@@ -81,7 +81,7 @@ $nameoffile=str_replace(' ','',$nameoffile);
 echo $nameoffile;
 $filename= $request->file('cvimage')->storeAs('public/',$nameoffile);
 $skillscollection= array();
-$languagecollection= array('languageone','languagetwo','languagethree');
+$languagecollection= array();
 $workcollection= array();
 $organizationcollection = array('organizationone','organizationtwo','organizationthree','organizationfour','organizationfive');
 $eventcollection=array('eventone','eventtwo','eventthree','eventfour','eventfive');
@@ -111,10 +111,17 @@ for($i=0;$i<3;$i++){
   $languagename=$request->get('language'.($i+1));
 
   $languageproficiency=$request->get('proficiency'.($i+1));
+  if(strcasecmp($languagename,"")==0 || strcasecmp($languageproficiency,"")==0){
+    break;
 
-  $languages=new Languages($languagename,$languageproficiency,$customer);
+  }else{
+    $languages=new Languages($languagename,$languageproficiency,$customer);
 
-  $languagecollection[$i]=$languages;
+    $languagecollection[$i]=$languages;
+
+  }
+
+ 
 
 }
 for($i=0;$i<4;$i++){
