@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 
 try{
 $contents =Storage::disk('public')->get('hamizan.png');
-echo "file can be readed";
+ //print "file can be readed";
 
 }catch(Exception $exception){
-  echo "file cannot be read";
+  //print "file cannot be read";
 }
 
  ?>
@@ -27,11 +27,14 @@ echo "file can be readed";
  <title>ResumePage</title>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=1024">
+ 
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -41,6 +44,7 @@ echo "file can be readed";
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
  <style>
  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
  * {box-sizing: border-box}
@@ -55,6 +59,9 @@ echo "file can be readed";
    padding-top: 10px;
    padding-bottom: 10px;
    color: white;
+ }
+ .color-white{
+   color:whitesmoke
  }
 
  .html {width: 87%; background-color: #04AA6D;}
@@ -73,22 +80,26 @@ echo "file can be readed";
 
    <!-- The Grid -->
    <div class="w3-row-padding">
-
+    <div class="w3-container" style='background-color:#ababab'>
+      <br>
      <!-- Left Column -->
-     <div class="w3-third">
+     <div class="w3-third" >
+       
 
-       <div class="w3-white w3-text-grey w3-card-4">
-         <div class="w3-display-container">
+       <div class="w3-white w3-text-white w3-card-4" style="max-height:2000px;background-color:#ababab">
+         <div class="w3-display-container" style="background-color:green">
            <img src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%" alt="Avatar">
-           <div class="w3-display-bottomleft w3-container w3-text-black">
+           <div class="w3-display-bottomleft w3-container w3-text-black" >
              <h2 style="Color:white">{{$customer->get_name()}}</h2>
            </div>
          </div>
-         <div class="w3-container">
-           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Major in <?=$customer->get_coursename()?></p>
-           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?=$customer->get_institutionname()?></p>
-           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?=$customer->get_email()?></p>
-           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><a href='https://wa.me/6<?=$customer->get_phonenumber()?>'><?=$customer->get_phonenumber()?></a></p>
+         
+         <div class="w3-container" style="background-color:#ababab ">
+          <br>
+           <p><i class="fa fa-briefcase color-white fa-fw w3-margin-right w3-large w3-text-teal " style="color:white;background-color:black"></i>Studying Major in <?=$customer->get_coursename()?></p>
+           <p><i class="fa fa-home  fa-fw w3-margin-right w3-large w3-text-teal" style="background-color:black"></i><?=$customer->get_institutionname()?></p>
+           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal" style="background-color:black"></i><?=$customer->get_email()?></p>
+           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" style="background-color:black"></i><a href='https://wa.me/6<?=$customer->get_phonenumber()?>'><?=$customer->get_phonenumber()?></a></p>
            <hr>
 
            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
@@ -119,7 +130,7 @@ echo "file can be readed";
      <!-- Right Column -->
      <div class="w3-twothird">
 
-       <div class="w3-container w3-card w3-white w3-margin-bottom">
+       <div class="w3-container w3-card w3-white ">
          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
          <?php foreach($workcollection as $work): ?>
 
@@ -129,9 +140,9 @@ echo "file can be readed";
            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?=$work->get_startwork()." " ?><span class="w3-tag w3-teal w3-round">  <?=$work->get_endwork()?></span></h6>
            <p><?=$work->get_describework()?></p>
            <hr>
-           
+          </div>
          <?php endforeach ?>
-         </div>
+         
 
        </div>
 
@@ -156,42 +167,37 @@ echo "file can be readed";
            <p>SPM Sciece Stream</p><br>
          </div>
        </div>
-       <br>
-       <br>
+       
 
 
-       <div class="w3-container w3-card w3-white w3-margin-bottom" style="overflow: scroll">
-        <h1>Programmigng Languages</h1>
-        <p>HTML</p>
-      <div class="container">
-        <div class="skills html">87%</div>
-      </div>
-   
-      <p>CSS</p>
-      <div class="container">
-        <div class="skills css">80%</div>
-      </div>
-   
-      <p>JavaScript</p>
-      <div class="container">
-        <div class="skills js">65%</div>
-      </div>
-   
-      <p>PHP</p>
-      <div class="container">
-        <div class="skills php">60%</div>
-      </div>
-   
-      <p>Java</p>
-      <div class="container">
-        <div class="skills java">90%</div>
-      </div>
-      <p>Object Oriented Programming</p>
-      <div class="container">
-        <div class="skills oop">90%</div>
-      </div>
+       <div class="w3-container w3-card w3-white w3-margin-bottom" >
+        
+        <h1> <kbd>Extra Co-curricular</kbd></h1>
+        <h2 class="w3-text-grey w3-padding-16"><i class='fas fa-user-graduate' style='font-size:36px'></i><u>Organizations</u></h2>
+        <br>
+        <?php foreach($organizationcollection as $organization): ?>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><?=$organization->get_nameorganization()?></b></h5>
+          <p><?=$organization->get_positionorganization();?></p>
+          <hr>
+        </div>
+
+        <?php endforeach?>
+        <h2 class="w3-text-grey w3-padding-16"><i class='fas fa-user-graduate' style='font-size:36px'></i><u>Events</u></h2>
+        <br>
+        <?php foreach($eventcollection as $event): ?>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><?=$event->get_nameevent()?></b></h5>
+          <p><?=$event->get_positionevent()?></p>
+          <hr>
+        </div>
+
+        <?php endforeach?>
+       </div>
+         
      <!-- End Right Column -->
      </div>
+    </div>
 
    <!-- End Grid -->
      </div>
