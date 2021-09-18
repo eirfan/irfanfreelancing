@@ -24,6 +24,8 @@ $contents =Storage::disk('public')->get('hamizan.png');
  <!DOCTYPE html>
  <html>
    <head>
+    <script type="text/javascript" src="html2canvas-master/dist/html2canvas.js"></script>
+
  <title>ResumePage</title>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=1024">
@@ -79,22 +81,25 @@ $contents =Storage::disk('public')->get('hamizan.png');
  <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
    <!-- The Grid -->
-   <div class="w3-row-padding">
-    <div class="w3-container" style='background-color:#ababab'>
-      <br>
+   <div class="w3-row-padding" style="height:100%">
+     <div class=".container" style="border-width:8px;border-style:solid;height:100%" >
+    <div id="capture" class="w3-container" style='background-color:black;padding:12px'>
+      
      <!-- Left Column -->
-     <div class="w3-third" >
-       
+     <div class="w3-third" style="height:2000px;background-color:#ababab">
+       <div class="w3-container w3-card " style="height:2000px;background-color:#ababab;padding:0px">
+      
+       <div class="w3-text-white w3-card-4" style="2000px" >
 
-       <div class="w3-white w3-text-white w3-card-4" style="max-height:2000px;background-color:#ababab">
+
          <div class="w3-display-container" style="background-color:green">
-           <img src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%" alt="Avatar">
+           <img src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%;height:100%" alt="Avatar">
            <div class="w3-display-bottomleft w3-container w3-text-black" >
              <h2 style="Color:white">{{$customer->get_name()}}</h2>
            </div>
          </div>
          
-         <div class="w3-container" style="background-color:#ababab ">
+         <div class="w3-container" style="background-color:#ababab;height:inherit ">
           <br>
            <p><i class="fa fa-briefcase color-white fa-fw w3-margin-right w3-large w3-text-teal " style="color:white;background-color:black"></i>Studying Major in <?=$customer->get_coursename()?></p>
            <p><i class="fa fa-home  fa-fw w3-margin-right w3-large w3-text-teal" style="background-color:black"></i><?=$customer->get_institutionname()?></p>
@@ -126,11 +131,13 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
      <!-- End Left Column -->
      </div>
+     </div>
 
      <!-- Right Column -->
-     <div class="w3-twothird">
+     <div class="w3-twothird" style="height:2000px;background-color:white">
+      
 
-       <div class="w3-container w3-card w3-white ">
+       <div class="w3-container w3-card w3-white " style="">
          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
          <?php foreach($workcollection as $work): ?>
 
@@ -146,7 +153,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
        </div>
 
-       <div class="w3-container w3-card w3-white">
+       <div class="w3-container w3-card w3-white" style="">
          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
          
          <div class="w3-container">
@@ -170,7 +177,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
        
 
 
-       <div class="w3-container w3-card w3-white w3-margin-bottom" >
+       <div class="w3-container w3-card w3-white "  >
         
         <h1> <kbd>Extra Co-curricular</kbd></h1>
         <h2 class="w3-text-grey w3-padding-16"><i class='fas fa-user-graduate' style='font-size:36px'></i><u>Organizations</u></h2>
@@ -194,7 +201,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
         <?php endforeach?>
        </div>
-         
+      </div>
      <!-- End Right Column -->
      </div>
     </div>
@@ -205,7 +212,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
 
 
-
+   </div>
    <!-- End Page Container -->
  </div>
  <div class="w3-container w3-card w3-white w3-margin-top">
@@ -219,7 +226,8 @@ $contents =Storage::disk('public')->get('hamizan.png');
    <img src="{{url('COCsix.png')}}" style="width:200px;height:120%"/>
  </div>
 </div>
- </div>
+ 
+
  
 
  <footer class="page-footer font-small blue">
@@ -231,8 +239,12 @@ $contents =Storage::disk('public')->get('hamizan.png');
    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
    <i class="fa fa-twitter w3-hover-opacity"></i>
    <i class="fa fa-linkedin w3-hover-opacity"></i>
+   
   </div>
  </footer>
+ 
+ 
+
 
  </body>
    </head>
