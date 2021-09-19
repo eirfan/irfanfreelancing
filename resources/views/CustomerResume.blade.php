@@ -76,6 +76,51 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
  </style>
  <body class="w3-light-grey">
+<div class=".container">
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class=".container" style="width:100%;height:100%:12px;border-style:solid;border-color:white>
+      <nav class="navbar navbar-dark bg-dark" style="height:100px;overflow:auto">
+        
+        <nav class="navbar navbar-expand-lg" style="overflow:auto,width:100%">
+        <a class="navbar-brand" href="/user">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Design wardrobe<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Create New Resume</a>
+            </li>
+            
+            
+          </ul>
+          <a class="btn btn-outline-success my-2 my-sm-0" href="#">Save</a>
+        </div>
+      
+        
+      </nav>
+    
+      </nav>
+    </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="d-flex justify-content-between">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> More
+        
+      </button>
+     
+    </div>
+    </nav>
+
+  </div>
+</div>
 
  <!-- Page Container -->
  <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -86,8 +131,8 @@ $contents =Storage::disk('public')->get('hamizan.png');
     <div id="capture" class="w3-container" style='background-color:black;padding:12px'>
       
      <!-- Left Column -->
-     <div class="w3-third" style="height:2000px;background-color:#ababab">
-       <div class="w3-container w3-card " style="height:2000px;background-color:#ababab;padding:0px">
+     <div class="w3-third" style="height:2400px;background-color:#ababab">
+       <div class="w3-container w3-card " style="height:2400px;background-color:#ababab;padding:0px">
       
        <div class="w3-text-white w3-card-4" style="2000px" >
 
@@ -134,7 +179,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
      </div>
 
      <!-- Right Column -->
-     <div class="w3-twothird" style="height:2000px;background-color:white">
+     <div class="w3-twothird" style="height:2400px;background-color:white">
       
 
        <div class="w3-container w3-card w3-white " style="">

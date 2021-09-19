@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-<title>My Blog</title>
+<title>IrfanFreelancerHeroku</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1024">
 <meta name="description" content="Freelancing Website ">
