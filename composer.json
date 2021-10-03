@@ -19,6 +19,7 @@
         "kreait/firebase-php": "^5.23",
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.3",
         "mongodb/mongodb": "^1.9",
         "sentry/sentry-laravel": "^2.8",
         "svk/yc-grpc-injector": "^0.0.1",
