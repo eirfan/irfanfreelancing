@@ -4,6 +4,7 @@ import html2canvas from '../html2canvas';
 import  saveAs  from 'file-saver';
 import Button from 'react-bootstrap/Button';
 import Typical from 'react-typical'
+import Flippy,{FrontSide,BackSide} from 'react-flippy';
 
 
 
@@ -63,6 +64,10 @@ function FirstAnimation(){
             wrapper="p"/>
     )
 }
+
+
+
+
 
 
 

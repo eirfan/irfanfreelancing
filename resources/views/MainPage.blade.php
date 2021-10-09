@@ -20,6 +20,46 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
+.flip-box {
+  background-color: transparent;
+  width: 384.98px;
+  height: 460px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 
 </style>
 <meta name="google-site-verification" content="PdLF89Amjja6DhbO1umcO5Mm9CJ1bhy8yZ0sAAmzOCA" />
@@ -37,10 +77,13 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
+  
   <img src="{{url('I-FUN.png')}}" style='width:150px' />
+
   <h1><b>MY Freelancing Blog</b></h1>
   <p style='font-size:30px'id='firstanimation'></p>
   <p>Welcome to the live of <span class="w3-tag">Eirfanz</span></p>
+
 </header>
 
 <!-- Grid -->
@@ -99,6 +142,28 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
   </div>
 
+   <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <!--<img src="{{asset('storage/profile/Muhammad Hamizan bin yusniprofile.jpg')}}" alt="Norway" style="width:100%">-->
+      <div class="w3-container">
+        <br>
+        
+         
+        <h3><b>Resume Automatic Generator</b></h3>
+        <h5>Date :<span class="w3-opacity"><?php echo date("Y/m/d")."<br>" ?></span></h5>
+      </div>
+  
+      <div class="w3-container">
+        <p>Resume Automatic Generator is a website where you can generate your own Resume CV simply by entering your credential informations, All the information will safely store inside the database to avoid any data casualities </p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+            <p><button class="w3-button w3-padding-large w3-white w3-border"><a href="/resumegenerator"<b>READ MORE »</b></a></button></p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  
   
     <div class="container mt-5">
       <div class="d-flex justify-content-left row">
@@ -145,12 +210,23 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Introduction menu -->
 <div class="w3-col l4">
   <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-    <img src="{{url('irfan.jpg')}}" style="width:100%"/> <!--To display image, we need to use blade laravel syntax, make sure to change the format of the file first to.blade -->
+  <div class='.container' style='width: 384.98px;height: 460px;'>
+  <div class="w3-card w3-margin w3-margin-top" style="background-color: black">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="{{url('irfan.jpg')}}" style="width:100%;height:100%"/> <!--To display image, we need to use blade laravel syntax, make sure to change the format of the file first to.blade -->
+  </div>
+  <div class="flip-box-back">
     <div class="w3-container w3-white">
       <h4><b>Irfan Hafiz</b></h4>
       <p>Hi, it's just me and welcome to my first Blog ever. I love to explore and learn new things everyday, This blog is going to show you all about my self-projects, so enjoy and feel free to leave any feedback  </p>
     </div>
+  </div>
+  </div>
+    </div>
+   
+  </div>
   </div><hr>
 
   <!-- Posts -->
