@@ -210,13 +210,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Introduction menu -->
 <div class="w3-col l4">
   <!-- About Card -->
-  <div class='.container' style='width: 384.98px;height: 460px;'>
+  <div class='.container'>
   <div class="w3-card w3-margin w3-margin-top" style="background-color: black">
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
+          <div class=".container">
           <img src="{{url('irfan.jpg')}}" style="width:100%;height:100%"/> <!--To display image, we need to use blade laravel syntax, make sure to change the format of the file first to.blade -->
   </div>
+</div>
   <div class="flip-box-back">
     <div class="w3-container w3-white">
       <h4><b>Irfan Hafiz</b></h4>
