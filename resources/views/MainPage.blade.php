@@ -28,10 +28,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <script src="{{asset('js/app.js')}}" defer></script>
 
 <div class=".container" >
-  <div id='example'>
-
-
-  </div>
+  
   <div id="screencapture">
 
 <!-- w3-content defines a container for fixed size centered content,
@@ -42,6 +39,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <header class="w3-container w3-center w3-padding-32">
   <img src="{{url('I-FUN.png')}}" style='width:150px' />
   <h1><b>MY Freelancing Blog</b></h1>
+  <p style='font-size:30px'id='firstanimation'></p>
   <p>Welcome to the live of <span class="w3-tag">Eirfanz</span></p>
 </header>
 

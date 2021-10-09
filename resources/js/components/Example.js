@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import html2canvas from '../html2canvas';
 import  saveAs  from 'file-saver';
+import Button from 'react-bootstrap/Button';
+import Typical from 'react-typical'
+
+
+
 function Example() {
     
     var number = 3+5;
@@ -42,18 +47,48 @@ function Example() {
     );
 }
 
+function ButtonCapture(){
+    console.log("Read ButtonCapture function");
+    return (
+        <Button variant="outline-success" onClick={Example}>Save</Button>
+    );
+}
+
+function FirstAnimation(){
+
+    return(
+        <Typical
+            steps={['Hello',1000,'My Name is Irfan Hafiz Bin Ibrahim',1000,'Nice to meet you',1000]}
+            loop={Infinity}
+            wrapper="p"/>
+    )
+}
+
+
+
 
 
 export default Example;
 
 
+
 if (document.getElementById('example')) {
     console.log("read example");
     if(document.getElementById('saveresume').onclick){
-        console.log("read saveresume")
+        console.log("read saveresume");
     //if there is a div tag with id = example..it will execute the Example() function
     
     ReactDOM.render(<Example />, document.getElementById('example'));
     }
+}
+
+if(document.getElementById('savebutton')){
+    console.log('Read Savebutton');
+    ReactDOM.render(<ButtonCapture />,document.getElementById('savebutton'));
+}
+
+if(document.getElementById('firstanimation')){
+    console.log('Read First Animatiomn');
+    ReactDOM.render(<FirstAnimation />,document.getElementById('firstanimation'));
 }
 

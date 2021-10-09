@@ -99,6 +99,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
             
             
           </ul>
+          <div id='savebutton'></div>
           <button id="saveresume" class="btn btn-outline-success my-2 my-sm-0" >Save</button>
         </div>
       
