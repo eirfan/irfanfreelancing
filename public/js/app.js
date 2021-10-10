@@ -1,6 +1,444 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/***/ ((module) => {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return _getPrototypeOf(o);
+}
+
+module.exports = _getPrototypeOf;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
+  \************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var objectWithoutPropertiesLoose = __webpack_require__(/*! ./objectWithoutPropertiesLoose.js */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js");
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js")["default"];
+
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+
+  return assertThisInitialized(self);
+}
+
+module.exports = _possibleConstructorReturn;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit.js */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest.js */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/***/ ((module) => {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@popperjs/core/lib/createPopper.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/createPopper.js ***!
@@ -5396,9 +5834,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _html2canvas__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_html2canvas__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
 /* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_typical__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-typical */ "./node_modules/react-typical/dist/index.es.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_flippy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-flippy */ "./node_modules/react-flippy/dist/index.cjs.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -5425,13 +5869,13 @@ function Example() {
       file_saver__WEBPACK_IMPORTED_MODULE_3___default()(base64image, "yourresume.png");
     });
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "row justify-content-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "card"
         })
       })
@@ -5441,7 +5885,7 @@ function Example() {
 
 function ButtonCapture() {
   console.log("Read ButtonCapture function");
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
     variant: "outline-success",
     onClick: Example,
     children: "Save"
@@ -5449,7 +5893,7 @@ function ButtonCapture() {
 }
 
 function FirstAnimation() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_typical__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_typical__WEBPACK_IMPORTED_MODULE_4__["default"], {
     steps: ['Hello', 1000, 'My Name is Irfan Hafiz Bin Ibrahim', 1000, 'Nice to meet you', 1000],
     loop: Infinity,
     wrapper: "p"
@@ -5464,18 +5908,18 @@ if (document.getElementById('example')) {
   if (document.getElementById('saveresume').onclick) {
     console.log("read saveresume"); //if there is a div tag with id = example..it will execute the Example() function
 
-    react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Example, {}), document.getElementById('example'));
+    react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Example, {}), document.getElementById('example'));
   }
 }
 
 if (document.getElementById('savebutton')) {
   console.log('Read Savebutton');
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(ButtonCapture, {}), document.getElementById('savebutton'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonCapture, {}), document.getElementById('savebutton'));
 }
 
 if (document.getElementById('firstanimation')) {
   console.log('Read First Animatiomn');
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(FirstAnimation, {}), document.getElementById('firstanimation'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(FirstAnimation, {}), document.getElementById('firstanimation'));
 }
 
 /***/ }),
@@ -16153,7 +16597,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/index.js");
 /* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
 /*!
-  * Bootstrap v5.1.1 (https://getbootstrap.com/)
+  * Bootstrap v5.1.3 (https://getbootstrap.com/)
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -16161,7 +16605,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/index.js
+ * Bootstrap (v5.1.3): util/index.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16472,7 +16916,7 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): dom/event-handler.js
+ * Bootstrap (v5.1.3): dom/event-handler.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16760,7 +17204,7 @@ const EventHandler = {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): dom/data.js
+ * Bootstrap (v5.1.3): dom/data.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16771,7 +17215,7 @@ const EventHandler = {
  * ------------------------------------------------------------------------
  */
 const elementMap = new Map();
-var Data = {
+const Data = {
   set(element, key, instance) {
     if (!elementMap.has(element)) {
       elementMap.set(element, new Map());
@@ -16814,7 +17258,7 @@ var Data = {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): base-component.js
+ * Bootstrap (v5.1.3): base-component.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16824,7 +17268,7 @@ var Data = {
  * ------------------------------------------------------------------------
  */
 
-const VERSION = '5.1.1';
+const VERSION = '5.1.3';
 
 class BaseComponent {
   constructor(element) {
@@ -16880,7 +17324,7 @@ class BaseComponent {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/component-functions.js
+ * Bootstrap (v5.1.3): util/component-functions.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16906,7 +17350,7 @@ const enableDismissTrigger = (component, method = 'hide') => {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): alert.js
+ * Bootstrap (v5.1.3): alert.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -16995,7 +17439,7 @@ defineJQueryPlugin(Alert);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): button.js
+ * Bootstrap (v5.1.3): button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17066,7 +17510,7 @@ defineJQueryPlugin(Button);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): dom/manipulator.js
+ * Bootstrap (v5.1.3): dom/manipulator.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17140,7 +17584,7 @@ const Manipulator = {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): dom/selector-engine.js
+ * Bootstrap (v5.1.3): dom/selector-engine.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17210,7 +17654,7 @@ const SelectorEngine = {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): carousel.js
+ * Bootstrap (v5.1.3): carousel.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17478,7 +17922,7 @@ class Carousel extends BaseComponent {
     };
 
     SelectorEngine.find(SELECTOR_ITEM_IMG, this._element).forEach(itemImg => {
-      EventHandler.on(itemImg, EVENT_DRAG_START, e => e.preventDefault());
+      EventHandler.on(itemImg, EVENT_DRAG_START, event => event.preventDefault());
     });
 
     if (this._pointerEvent) {
@@ -17759,7 +18203,7 @@ defineJQueryPlugin(Carousel);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): collapse.js
+ * Bootstrap (v5.1.3): collapse.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -17790,6 +18234,7 @@ const CLASS_NAME_SHOW$7 = 'show';
 const CLASS_NAME_COLLAPSE = 'collapse';
 const CLASS_NAME_COLLAPSING = 'collapsing';
 const CLASS_NAME_COLLAPSED = 'collapsed';
+const CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`;
 const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
 const WIDTH = 'width';
 const HEIGHT = 'height';
@@ -17859,7 +18304,7 @@ class Collapse extends BaseComponent {
     let activesData;
 
     if (this._config.parent) {
-      const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+      const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
       actives = SelectorEngine.find(SELECTOR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
     }
 
@@ -17997,7 +18442,7 @@ class Collapse extends BaseComponent {
       return;
     }
 
-    const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+    const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
     SelectorEngine.find(SELECTOR_DATA_TOGGLE$4, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
       const selected = getElementFromSelector(element);
 
@@ -18077,7 +18522,7 @@ defineJQueryPlugin(Collapse);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): dropdown.js
+ * Bootstrap (v5.1.3): dropdown.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -18539,7 +18984,7 @@ defineJQueryPlugin(Dropdown);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/scrollBar.js
+ * Bootstrap (v5.1.3): util/scrollBar.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -18643,8 +19088,8 @@ class ScrollBarHelper {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/backdrop.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v5.1.3): util/backdrop.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 const Default$7 = {
@@ -18767,8 +19212,8 @@ class Backdrop {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/focustrap.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v5.1.3): util/focustrap.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 const Default$6 = {
@@ -18870,7 +19315,7 @@ class FocusTrap {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): modal.js
+ * Bootstrap (v5.1.3): modal.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -19299,8 +19744,8 @@ defineJQueryPlugin(Modal);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): offcanvas.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v5.1.3): offcanvas.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 /**
@@ -19555,42 +20000,42 @@ defineJQueryPlugin(Offcanvas);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): util/sanitizer.js
+ * Bootstrap (v5.1.3): util/sanitizer.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
-const uriAttrs = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
+const uriAttributes = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
 const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
 /**
  * A pattern that recognizes a commonly useful subset of URLs that are safe.
  *
- * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+ * Shoutout to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
  */
 
-const SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/i;
+const SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file|sms):|[^#&/:?]*(?:[#/?]|$))/i;
 /**
  * A pattern that matches safe data URLs. Only matches image, video and audio types.
  *
- * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+ * Shoutout to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
  */
 
 const DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
 
-const allowedAttribute = (attr, allowedAttributeList) => {
-  const attrName = attr.nodeName.toLowerCase();
+const allowedAttribute = (attribute, allowedAttributeList) => {
+  const attributeName = attribute.nodeName.toLowerCase();
 
-  if (allowedAttributeList.includes(attrName)) {
-    if (uriAttrs.has(attrName)) {
-      return Boolean(SAFE_URL_PATTERN.test(attr.nodeValue) || DATA_URL_PATTERN.test(attr.nodeValue));
+  if (allowedAttributeList.includes(attributeName)) {
+    if (uriAttributes.has(attributeName)) {
+      return Boolean(SAFE_URL_PATTERN.test(attribute.nodeValue) || DATA_URL_PATTERN.test(attribute.nodeValue));
     }
 
     return true;
   }
 
-  const regExp = allowedAttributeList.filter(attrRegex => attrRegex instanceof RegExp); // Check if a regular expression validates the attribute.
+  const regExp = allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp); // Check if a regular expression validates the attribute.
 
   for (let i = 0, len = regExp.length; i < len; i++) {
-    if (regExp[i].test(attrName)) {
+    if (regExp[i].test(attributeName)) {
       return true;
     }
   }
@@ -19642,23 +20087,22 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFn) {
 
   const domParser = new window.DOMParser();
   const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
-  const allowlistKeys = Object.keys(allowList);
   const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
 
   for (let i = 0, len = elements.length; i < len; i++) {
-    const el = elements[i];
-    const elName = el.nodeName.toLowerCase();
+    const element = elements[i];
+    const elementName = element.nodeName.toLowerCase();
 
-    if (!allowlistKeys.includes(elName)) {
-      el.remove();
+    if (!Object.keys(allowList).includes(elementName)) {
+      element.remove();
       continue;
     }
 
-    const attributeList = [].concat(...el.attributes);
-    const allowedAttributes = [].concat(allowList['*'] || [], allowList[elName] || []);
-    attributeList.forEach(attr => {
-      if (!allowedAttribute(attr, allowedAttributes)) {
-        el.removeAttribute(attr.nodeName);
+    const attributeList = [].concat(...element.attributes);
+    const allowedAttributes = [].concat(allowList['*'] || [], allowList[elementName] || []);
+    attributeList.forEach(attribute => {
+      if (!allowedAttribute(attribute, allowedAttributes)) {
+        element.removeAttribute(attribute.nodeName);
       }
     });
   }
@@ -19668,7 +20112,7 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFn) {
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): tooltip.js
+ * Bootstrap (v5.1.3): tooltip.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -20378,7 +20822,7 @@ defineJQueryPlugin(Tooltip);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): popover.js
+ * Bootstrap (v5.1.3): popover.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -20488,7 +20932,7 @@ defineJQueryPlugin(Popover);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): scrollspy.js
+ * Bootstrap (v5.1.3): scrollspy.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -20723,7 +21167,7 @@ defineJQueryPlugin(ScrollSpy);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): tab.js
+ * Bootstrap (v5.1.3): tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -20921,7 +21365,7 @@ defineJQueryPlugin(Tab);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.1.1): toast.js
+ * Bootstrap (v5.1.3): toast.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -78728,6 +79172,222 @@ function checkDCE() {
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-flippy/dist/index.cjs.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-flippy/dist/index.cjs.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var _extends = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
+var _defineProperty = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js"));
+var _slicedToArray = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _objectWithoutProperties = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js"));
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var React__default = _interopDefault(React);
+var _classCallCheck = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js"));
+var _createClass = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js"));
+var _inherits = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js"));
+var _possibleConstructorReturn = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js"));
+var _getPrototypeOf = _interopDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js"));
+
+var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
+
+var css = "\n.flippy-container *\n{\n    box-sizing: border-box;\n}\n\n.flippy-cardContainer-wrapper\n{\n\tposition: relative;\n\theight: 100%;\n    width: 100%;\n}\n\n.flippy-cardContainer\n{\n    height: 100%;\n    width: 100%;\n    position: relative;\n\n    -webkit-transition: .6s;\n       -moz-transition: .6s;\n        -ms-transition: .6s;\n         -o-transition: .6s;\n            transition: .6s;\n    -moz-transform: perspective(1000px);\n         transform: perspective(1000px);\n\n    -webkit-transform-style: preserve-3d;\n       -moz-transform-style: preserve-3d;\n        -ms-transform-style: preserve-3d;\n         -o-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n}\n\n.flippy-front,\n.flippy-back\n{\n    position: relative;\n\n    width: 100%;\n    height: 100%;\n    padding: 1em;\n\n    -webkit-transform: rotateY(0deg);\n       -moz-transform: rotateY(0deg);\n        -ms-transform: rotateY(0deg);\n         -o-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n\n    background: transparent;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);\n\n    -webkit-backface-visibility: hidden;\n       -moz-backface-visibility: hidden;\n        -ms-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n       -moz-transform-style: preserve-3d;\n         -o-transform-style: preserve-3d;\n        -ms-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n}\n\n.flippy-front\n{\n    -webkit-transform: rotateY(0deg);\n        -ms-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n}\n\n.flippy-back\n{\n    position: absolute;\n    top: 0;\n    left: 0;\n\n    -webkit-transform: rotateY(-180deg);\n       -moz-transform: rotateY(-180deg);\n        -ms-transform: rotateY(-180deg);\n         -o-transform: rotateY(-180deg);\n            transform: rotateY(-180deg);\n}\n\n.flippy-cardContainer.isActive:not(.istouchdevice) .flippy-back,\n.flippy-cardContainer.isActive.istouchdevice .flippy-back\n{\n    -webkit-transform: rotateY(0deg);\n       -moz-transform: rotateY(0deg);\n        -ms-transform: rotateY(0deg);\n         -o-transform: rotateY(0deg);\n            transform: rotateY(0deg);\n}\n\n.flippy-cardContainer.isActive:not(.istouchdevice) .flippy-front,\n.flippy-cardContainer.isActive.istouchdevice .flippy-front\n{\n    -webkit-transform: rotateY(180deg);\n       -moz-transform: rotateY(180deg);\n        -ms-transform: rotateY(180deg);\n         -o-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n}\n\n.flippy-cardContainer-wrapper.vertical .flippy-back\n{\n    -webkit-transform: rotateX(-180deg);\n       -moz-transform: rotateX(-180deg);\n        -ms-transform: rotateX(-180deg);\n         -o-transform: rotateX(-180deg);\n            transform: rotateX(-180deg);\n}\n\n.flippy-cardContainer-wrapper.vertical .flippy-cardContainer.isActive:not(.istouchdevice) .flippy-back,\n.flippy-cardContainer-wrapper.vertical .flippy-cardContainer.isActive.istouchdevice .flippy-back\n{\n    -webkit-transform: rotateX(0deg);\n       -moz-transform: rotateX(0deg);\n        -ms-transform: rotateX(0deg);\n         -o-transform: rotateX(0deg);\n            transform: rotateX(0deg);\n}\n\n.flippy-cardContainer-wrapper.vertical .flippy-cardContainer.isActive:not(.istouchdevice) .flippy-front,\n.flippy-cardContainer-wrapper.vertical .flippy-cardContainer.isActive.istouchdevice .flippy-front\n{\n    -webkit-transform: rotateX(180deg);\n       -moz-transform: rotateX(180deg);\n         -o-transform: rotateX(180deg);\n            transform: rotateX(180deg);\n            transform: rotateX(180deg);\n}\n";
+n(css,{});
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+var Flippy = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
+  var _isFlipped = _ref.isFlipped,
+      className = _ref.className,
+      flipDirection = _ref.flipDirection,
+      style = _ref.style,
+      children = _ref.children,
+      flipOnHover = _ref.flipOnHover,
+      flipOnClick = _ref.flipOnClick,
+      onClick = _ref.onClick,
+      onTouchStart = _ref.onTouchStart,
+      onMouseEnter = _ref.onMouseEnter,
+      onMouseLeave = _ref.onMouseLeave,
+      rest = _objectWithoutProperties(_ref, ["isFlipped", "className", "flipDirection", "style", "children", "flipOnHover", "flipOnClick", "onClick", "onTouchStart", "onMouseEnter", "onMouseLeave"]);
+
+  var simpleFlag = React.useRef({
+    isTouchDevice: false
+  });
+
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isTouchDevice = _useState2[0],
+      setTouchDevice = _useState2[1];
+
+  var _useState3 = React.useState(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isFlipped = _useState4[0],
+      setFlipped = _useState4[1];
+
+  var toggle = function toggle() {
+    return setFlipped(!isFlipped);
+  };
+
+  React.useImperativeHandle(ref, function () {
+    return {
+      toggle: toggle
+    };
+  });
+
+  var handleTouchStart = function handleTouchStart(event) {
+    if (!isTouchDevice) {
+      simpleFlag.current.isTouchDevice = true;
+      setTouchDevice(true);
+    }
+
+    onTouchStart(event);
+  };
+
+  var handleMouseEnter = function handleMouseEnter(event) {
+    if (flipOnHover && !simpleFlag.current.isTouchDevice) {
+      setFlipped(true);
+    }
+
+    onMouseEnter(event);
+  };
+
+  var handleMouseLeave = function handleMouseLeave(event) {
+    if (flipOnHover && !simpleFlag.current.isTouchDevice) {
+      setFlipped(false);
+    }
+
+    onMouseLeave(event);
+  };
+
+  var handleClick = function handleClick(event) {
+    switch (true) {
+      case flipOnHover && !simpleFlag.current.isTouchDevice:
+      case !flipOnClick && !flipOnHover:
+        break;
+
+      default:
+        setFlipped(!isFlipped);
+        break;
+    }
+
+    onClick(event);
+  };
+
+  React.useEffect(function () {
+    if (typeof _isFlipped === 'boolean' && _isFlipped !== isFlipped) {
+      setFlipped(_isFlipped);
+    }
+  }, [_isFlipped]);
+  return /*#__PURE__*/React__default.createElement("div", _extends({}, rest, {
+    className: "flippy-container ".concat(className || ''),
+    style: _objectSpread({}, style),
+    onTouchStart: handleTouchStart,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+    onClick: handleClick
+  }), /*#__PURE__*/React__default.createElement("div", {
+    className: "flippy-cardContainer-wrapper ".concat(flipDirection)
+  }, /*#__PURE__*/React__default.createElement("div", {
+    className: "flippy-cardContainer ".concat(isFlipped ? 'isActive' : '', " ").concat(isTouchDevice ? 'istouchdevice' : '')
+  }, children)));
+});
+Flippy.defaultProps = {
+  flipDirection: 'horizontal',
+  flipOnHover: false,
+  flipOnClick: true,
+  isFlipped: false,
+  onMouseEnter: function onMouseEnter() {},
+  onMouseLeave: function onMouseLeave() {},
+  onTouchStart: function onTouchStart() {},
+  onClick: function onClick() {}
+};
+
+function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var FlippyCard = /*#__PURE__*/function (_React$Component) {
+  _inherits(FlippyCard, _React$Component);
+
+  var _super = _createSuper(FlippyCard);
+
+  function FlippyCard() {
+    _classCallCheck(this, FlippyCard);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(FlippyCard, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          cardType = _this$props.cardType,
+          style = _this$props.style,
+          elementType = _this$props.elementType,
+          animationDuration = _this$props.animationDuration,
+          rest = _objectWithoutProperties(_this$props, ["className", "cardType", "style", "elementType", "animationDuration"]);
+
+      return /*#__PURE__*/React__default.createElement(elementType || 'div', _objectSpread$1(_objectSpread$1({
+        className: "flippy-card flippy-".concat(cardType, " ").concat(className || '')
+      }, rest), {}, {
+        style: _objectSpread$1(_objectSpread$1({}, style || {}), {
+          transitionDuration: "".concat(animationDuration / 1000, "s")
+        })
+      }), this.props.children);
+    }
+  }]);
+
+  return FlippyCard;
+}(React__default.Component);
+
+var FrontSide = function FrontSide(_ref) {
+  var isFlipped = _ref.isFlipped,
+      style = _ref.style,
+      animationDuration = _ref.animationDuration,
+      props = _objectWithoutProperties(_ref, ["isFlipped", "style", "animationDuration"]);
+
+  return /*#__PURE__*/React__default.createElement(FlippyCard, _extends({}, props, {
+    style: _objectSpread$1({}, style || {}),
+    animationDuration: animationDuration,
+    cardType: "front"
+  }));
+};
+var BackSide = function BackSide(_ref2) {
+  var isFlipped = _ref2.isFlipped,
+      style = _ref2.style,
+      props = _objectWithoutProperties(_ref2, ["isFlipped", "style"]);
+
+  return /*#__PURE__*/React__default.createElement(FlippyCard, _extends({}, props, {
+    style: _objectSpread$1({}, style || {}),
+    cardType: "back"
+  }));
+};
+FlippyCard.defaultProps = {
+  animationDuration: 600
+};
+
+exports.BackSide = BackSide;
+exports.Flippy = Flippy;
+exports.FrontSide = FrontSide;
+exports["default"] = Flippy;
 
 
 /***/ }),

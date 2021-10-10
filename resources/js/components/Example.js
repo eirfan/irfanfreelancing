@@ -5,6 +5,8 @@ import  saveAs  from 'file-saver';
 import Button from 'react-bootstrap/Button';
 import Typical from 'react-typical'
 import Flippy,{FrontSide,BackSide} from 'react-flippy';
+import { Badge } from 'react-bootstrap';
+import { wrap } from 'lodash';
 
 
 
@@ -73,6 +75,7 @@ function FirstAnimation(){
 
 
 
+
 export default Example;
 
 
@@ -96,4 +99,5 @@ if(document.getElementById('firstanimation')){
     console.log('Read First Animatiomn');
     ReactDOM.render(<FirstAnimation />,document.getElementById('firstanimation'));
 }
+
 

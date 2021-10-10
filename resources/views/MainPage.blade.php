@@ -30,15 +30,15 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 .flip-box-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 384.97px;
+  height: 460px;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
 .flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(540deg);
 }
 
 .flip-box-front, .flip-box-back {
@@ -140,30 +140,33 @@ and is wrapped around the whole page content, except for the footer in this exam
         
       </div>
     </div>
-  </div>
-
-   <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <!--<img src="{{asset('storage/profile/Muhammad Hamizan bin yusniprofile.jpg')}}" alt="Norway" style="width:100%">-->
-      <div class="w3-container">
-        <br>
-        
-         
-        <h3><b>Resume Automatic Generator</b></h3>
-        <h5>Date :<span class="w3-opacity"><?php echo date("Y/m/d")."<br>" ?></span></h5>
+    <br><br>
+    <div class='w3-container'>
+    <h3><b>Articles and Notes Science Computer</b></h3>
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Data Visualization</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Computer Vision</a>
+          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Web Development</a>
+          <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Deep Learning</a>
+        </div>
       </div>
-  
-      <div class="w3-container">
-        <p>Resume Automatic Generator is a website where you can generate your own Resume CV simply by entering your credential informations, All the information will safely store inside the database to avoid any data casualities </p>
-        <div class="w3-row">
-          <div class="w3-col m8 s12">
-            <p><button class="w3-button w3-padding-large w3-white w3-border"><a href="/resumegenerator"<b>READ MORE »</b></a></button></p>
-          </div>
-          
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="word-wrap: break-word">Data Visualization is a graphical techniques of representing information and Data by using visual elements such as charts, graphs, maps, plot and etc. Matplotlib and Seaborn are some of the example of Data Visualization Tools in Python</div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Naruto Hensem</div>
+          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
         </div>
       </div>
     </div>
-  
+  </div>
+  <br>
+  </div>
+
+   <!-- Blog entry -->
+ 
   
     <div class="container mt-5">
       <div class="d-flex justify-content-left row">
@@ -193,6 +196,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <form action="/firestoreoperation" method="post" enctype="multipart/form-data">
                       @csrf
                       <input type="hidden" name="action" value="storecomment">
+                      
                       <div class="form-group"><input type="text" name="commentname" id="fullname" class="form-control" placeholder="Please insert your name"> </div>
                       <div class="d-flex flex-row align-items-start"><textarea placeholder="Comment Section" class="form-control ml-1 shadow-none textarea" name="commentsection"></textarea></div>
                       <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="submit">Post comment</button></div>
@@ -210,14 +214,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Introduction menu -->
 <div class="w3-col l4">
   <!-- About Card -->
-  <div class='.container'>
+  
   <div class="w3-card w3-margin w3-margin-top" style="background-color: black">
-    <div class="flip-box">
-      <div class="flip-box-inner">
+    <div class="flip-box" style="width:100%;height:100%;background-color:black">
+      <div class="flip-box-inner" style="width:100%;heigth:100%">
         <div class="flip-box-front">
-          <div class=".container">
+          
+          
           <img src="{{url('irfan.jpg')}}" style="width:100%;height:100%"/> <!--To display image, we need to use blade laravel syntax, make sure to change the format of the file first to.blade -->
-  </div>
+  
 </div>
   <div class="flip-box-back">
     <div class="w3-container w3-white">
@@ -229,7 +234,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
    
   </div>
-  </div><hr>
+  <hr>
 
   <!-- Posts -->
   <div class="w3-card w3-margin">
