@@ -405,5 +405,14 @@ foreach ($user as $user) {
 
 }
 
+
+public function DataVisualization(){
+  return view('DataVisualization');
+}
+
+public function ComputerVision(){
+  return view('ComputerVision');
+}
+
     //
 }

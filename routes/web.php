@@ -45,3 +45,7 @@ Route::get('/storage/{nameoffile}', function($nameoffile){
 Route::get('/laravelfirebase','App\Http\Controllers\TaskController@laravelfirebase');
 
 Route::post('/firestoreoperation','App\Http\Controllers\TaskController@firestoreoperation');
+
+Route::get('/DataVisualization', 'App\Http\Controllers\TaskController@DataVisualization');
+
+Route::get('/ComputerVision','App\Http\Controllers\TaskController@ComputerVision' );

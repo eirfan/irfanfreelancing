@@ -154,8 +154,8 @@ and is wrapped around the whole page content, except for the footer in this exam
       </div>
       <div class="col-8">
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="word-wrap: break-word">Data Visualization is a graphical techniques of representing information and Data by using visual elements such as charts, graphs, maps, plot and etc. Matplotlib and Seaborn are some of the example of Data Visualization Tools in Python</div>
-          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Naruto Hensem</div>
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="word-wrap: break-word"><a href='/DataVisualization'>Data Visualization</a> is a graphical techniques of representing information and Data by using visual elements such as charts, graphs, maps, plot and etc. Matplotlib and Seaborn are some of the example of Data Visualization Tools in Python</div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list" style="word-wrap:break-word"><a href='/ComputerVision'>Computer Vision</a> is a field of Deep learning that enables computer to see and derive meaningful information from Digital Images, Videos and Other Visual Input. Computer Vision can be done by using OpenCV or Tensorflow libraries available on Python and Javascript.<br> Most of the time, Computer Vision required you to build one deep learning Model by using Python</div>
           <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
         </div>
