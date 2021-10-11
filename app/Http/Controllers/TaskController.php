@@ -339,9 +339,12 @@ public function firestoreoperation(Request $request){
    $action = $request->get("action");
 
    if(strcasecmp($action,"storecomment")==0){
+     echo "Read Here";
     try{
       $firebase= (new Factory)->withServiceAccount(__DIR__.'/laravelfirebaseone-firebase-adminsdk-btv6w-58fc01519b.json')->withDatabaseUri('https://laravelfirebaseone-default-rtdb.firebaseio.com/');
+      echo' line 344';
       $firestoresequence= $firebase->createFirestore();
+      echo 'line 346';
       $sequence= $firestoresequence->database()->collection('sequence')->document('sequencenumber')->snapshot();
       $firestore= $firebase->createFirestore();
       $database= $firestore->database();
