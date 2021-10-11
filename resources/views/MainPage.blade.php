@@ -65,7 +65,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <meta name="google-site-verification" content="PdLF89Amjja6DhbO1umcO5Mm9CJ1bhy8yZ0sAAmzOCA" />
 </head>
 <body class="w3-light-grey">
-  <script src="{{asset('js/app.js')}}" defer></script>
+  <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
 
 <div class=".container" >
   
