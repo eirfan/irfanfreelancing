@@ -66,7 +66,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </head>
 <body class="w3-light-grey">
   <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
-   <h1>Narutooo</h1>
+  
 <div class=".container" >
   
   <div id="screencapture">
