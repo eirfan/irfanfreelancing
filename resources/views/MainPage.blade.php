@@ -148,7 +148,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Data Visualization</a>
           <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Computer Vision</a>
-          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Web Development</a>
+          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Python Notes and Tutorial</a>
           <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Deep Learning</a>
         </div>
       </div>
@@ -156,7 +156,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list" style="word-wrap: break-word"><a href='/DataVisualization'>Data Visualization</a> is a graphical techniques of representing information and Data by using visual elements such as charts, graphs, maps, plot and etc. Matplotlib and Seaborn are some of the example of Data Visualization Tools in Python</div>
           <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list" style="word-wrap:break-word"><a href='/ComputerVision'>Computer Vision</a> is a field of Deep learning that enables computer to see and derive meaningful information from Digital Images, Videos and Other Visual Input. Computer Vision can be done by using OpenCV or Tensorflow libraries available on Python and Javascript.<br> Most of the time, Computer Vision required you to build one deep learning Model by using Python</div>
-          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list" style='word-wrap:break-word'><a href='/PythonTutorial'>Python</a> is a high level programming language mostly used in general-purpose Data Science, Artificial Intelligence and machine learning. Evolved from python 2, python version 3 has proved to be worth to learn programming language nowadays. With 1001 libraries available on python such as opencv, numpy, pandas, tensorflow, wordCloud, Matplotlib and etc, Python can perform well in Data Visualization, Deep Learning, Machine Learning and etc. </div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
         </div>
       </div>

@@ -49,3 +49,5 @@ Route::post('/firestoreoperation','App\Http\Controllers\TaskController@firestore
 Route::get('/DataVisualization', 'App\Http\Controllers\TaskController@DataVisualization');
 
 Route::get('/ComputerVision','App\Http\Controllers\TaskController@ComputerVision' );
+
+Route::get('/PythonTutorial','App\Http\Controllers\TaskController@PythonTutorial');

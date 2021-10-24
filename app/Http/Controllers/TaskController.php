@@ -416,6 +416,9 @@ public function DataVisualization(){
 public function ComputerVision(){
   return view('ComputerVision');
 }
+public function PythonTutorial(){
+  return view('PythonTutorial');
+}
 
     //
 }
