@@ -17,3 +17,4 @@ require('./components/Example');
 
 require("./html2canvas");
 
+require('./changecontent')

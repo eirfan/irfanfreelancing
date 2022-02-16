@@ -124,7 +124,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
 </div>
 
  <!-- Page Container -->
- <div id="screencapture">
+ <div id="screencapture" contenteditable="true">
  <div class="w3-content w3-margin-top"  style="max-width:1400px;">
 
    <!-- The Grid -->
@@ -139,8 +139,8 @@ $contents =Storage::disk('public')->get('hamizan.png');
        <div class="w3-text-white w3-card-4" style="2000px" >
 
 
-         <div class="w3-display-container" style="background-color:green">
-           <img src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%;height:100%" alt="Avatar">
+         <div  class="w3-display-container" style="background-color:green">
+           <img contenteditable="true" src="{{ URL::asset('storage/'.$nameoffile)}}" alt="Cannot read" style="width:100%;height:100%" alt="Avatar">
            <div class="w3-display-bottomleft w3-container w3-text-black" >
              <h2 style="Color:white">{{$customer->get_name()}}</h2>
            </div>
@@ -263,7 +263,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
  </div>
    <!-- End Page Container -->
  </div>
- <div class="w3-container w3-card w3-white w3-margin-top">
+ <!--<div class="w3-container w3-card w3-white w3-margin-top">
   <h1>Certificates Hall</h1>
   <div style="display:inline-block;height:100%;width:100%;overflow:scroll">
    <img src="{{url('COCOne.png')}}" style="width:200px; height:120%;"/>
@@ -273,7 +273,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
    <img src="{{url('COCfive.png')}}" style="width:150px;height:120%"/>
    <img src="{{url('COCsix.png')}}" style="width:200px;height:120%"/>
  </div>
-</div>
+</div>-->
  
 
  

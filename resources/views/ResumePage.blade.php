@@ -50,8 +50,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Major in Science Computer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Universiti Teknologi Mara, UiTM</p>
+          <p ><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Major in Science Computer</p>
+          <p ><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Universiti Teknologi Mara, UiTM</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>2019422662@student.uitm.edu.my</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><a href='https://wa.me/601169912862'>01169912862</a></p>
           <hr>

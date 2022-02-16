@@ -64,8 +64,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <meta name="google-site-verification" content="PdLF89Amjja6DhbO1umcO5Mm9CJ1bhy8yZ0sAAmzOCA" />
 </head>
-<body class="w3-light-grey">
+<body class="w3-light-grey" style="background: linear-gradient(white,grey)">
   <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
+  <script src="{{URL::asset('/js/changecontent.js')}}"></script>
   
 <div class=".container" >
   
@@ -83,11 +84,15 @@ and is wrapped around the whole page content, except for the footer in this exam
   <h1><b>MY Freelancing Blog</b></h1>
   <p style='font-size:30px'id='firstanimation'></p>
   <p>Welcome to the live of <span class="w3-tag">Eirfanz</span></p>
-
+  
 </header>
+<div style="color:aqua;width:100%;height:100%" class="navbar navbar-dark bg-dark" >
+  <button style="margin: left;width:50px,height:50px">Blog</button>
+  <button style="margin: right">Next</button>
+  </div>
 
 <!-- Grid -->
-<div class="w3-row">
+<div class="w3-row" name="content_one">
 
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
@@ -128,18 +133,18 @@ and is wrapped around the whole page content, except for the footer in this exam
         </nav>
        
       <h3><b>Resume Automatic Generator</b></h3>
-      <h5>Date :<span class="w3-opacity"><?php echo date("Y/m/d")."<br>" ?></span></h5>
+      <h5>Date :<span class="w3-opacity"><?php echo date("Y/m/d")."<br>" ?>Unavailable, Sorry for the Inconvenience</span></h5>
     </div>
 
-    <div class="w3-container">
+    <!--<div class="w3-container">
       <p>Resume Automatic Generator is a website where you can generate your own Resume CV simply by entering your credential informations, All the information will safely store inside the database to avoid any data casualities </p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href="/resumegenerator"<b>READ MORE »</b></a></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href="/"<b>READ MORE »</b></a></button></p>
         </div>
-        
+      
       </div>
-    </div>
+    </div>-->
     <br><br>
     <div class='w3-container'>
     <h3><b>Articles and Notes Science Computer</b></h3>
@@ -300,6 +305,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END w3-content -->
 </div>
 </div>
+</div>
+
+<div class="w3-row" name="content_two" style="display: none" >
+  <h1>Hello, it is irfan</h1>
 </div>
 
 
