@@ -23,7 +23,7 @@ $contents =Storage::disk('public')->get('hamizan.png');
 
  <!DOCTYPE html>
  <html>
-   <head>
+   <head> 
     
 
  <title>ResumePage</title>
