@@ -66,7 +66,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </head>
 <body class="w3-light-grey" style="background: linear-gradient(white,grey)">
   <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
-  <script src="{{URL::asset('/js/changecontent.js')}}"></script>
+  
   
 <div class=".container" >
   
@@ -87,12 +87,13 @@ and is wrapped around the whole page content, except for the footer in this exam
   
 </header>
 <div style="color:aqua;width:100%;height:100%" class="navbar navbar-dark bg-dark" >
-  <button style="margin: left;width:50px,height:50px">Blog</button>
-  <button style="margin: right">Next</button>
+  <button style="margin: left;width:50px,height:50px" id="button_content_one">Blog</button>
+  <p title="Homepage" style="margin:center;color:white;font-size:30px" id="content_name"><b>Homepage</b></p>
+  <button style="margin: right" id="button_content_two">Next</button>
   </div>
 
 <!-- Grid -->
-<div class="w3-row" name="content_one">
+<div class="w3-row" name="content_one" id="content_one">
 
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
@@ -307,7 +308,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 </div>
 
-<div class="w3-row" name="content_two" style="display: none" >
+<div class="w3-row" name="content_two" style="display: none" id="content_two">
   <h1>Hello, it is irfan</h1>
 </div>
 
@@ -333,6 +334,6 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 </footer>
 </div>
-
+<script type="module" src="{{URL::asset('/js/changecontent.js')}}"></script>
 </body>
 </html>
