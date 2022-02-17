@@ -51,3 +51,7 @@ Route::get('/DataVisualization', 'App\Http\Controllers\TaskController@DataVisual
 Route::get('/ComputerVision','App\Http\Controllers\TaskController@ComputerVision' );
 
 Route::get('/PythonTutorial','App\Http\Controllers\TaskController@PythonTutorial');
+
+Route::get('/ApiWithoutKey','App\Http\Controllers\TaskController@apiWithoutKeyRetrieveFeedback');
+
+Route::get('/SendFeedback','App\Http\Controllers\TaskController@apiWithoutKeyCreateFeedback');

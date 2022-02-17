@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -23,6 +24,7 @@ use App\Models\Languages;
 use App\Models\WorkExperience;
 use App\Models\Organization;
 use App\Models\Event;
+use Facade\FlareClient\Http\Client;
 use Google\Cloud\Firestore\V1\FirestoreClient as V1FirestoreClient;
 use Kreait\Firebase\Exception\FirebaseException;
 
@@ -334,34 +336,19 @@ echo $exception;
 public function firestoreoperation(Request $request){
    $comment = $request->get('commentsection');
    $name =$request->get('commentname');
-   echo $comment;
+   
 
    $action = $request->get("action");
 
    if(strcasecmp($action,"storecomment")==0){
-     echo "Read Here";
-    try{
-      $firebase= (new Factory)->withServiceAccount(__DIR__.'/laravelfirebaseone-firebase-adminsdk-btv6w-58fc01519b.json')->withDatabaseUri('https://laravelfirebaseone-default-rtdb.firebaseio.com/');
-      echo' line 344';
-      $firestoresequence= $firebase->createFirestore();
-      echo 'line 346';
-      $sequence= $firestoresequence->database()->collection('sequence')->document('sequencenumber')->snapshot();
-      $firestore= $firebase->createFirestore();
-      $database= $firestore->database();
-      $db= $database->collection('feedback');
-      $data = $db->document($sequence->data()['number'].$name)->set(['Comment '=>$comment]);
-      //update sequence
-      $sequencenumber = $sequence->data()['number'] + 1;
-      $sequence=$firestoresequence->database()->collection('sequence')->document('sequencenumber')->set(['number'=> $sequencenumber]);
-      return view('MainPage');
+     //this refering to the global scope of the data
+    $this->apiWithoutKeyCreateFeedback($name,$comment); 
+    
   
-    }catch(FirebaseException $firebaseexception){
-          echo $firebaseexception->getMessage();
-  
-    }
 
-
-
+   }
+   else{
+     return view('MainPage');
    }
    
   
@@ -418,6 +405,26 @@ public function ComputerVision(){
 }
 public function PythonTutorial(){
   return view('PythonTutorial');
+}
+
+
+
+public function apiWithoutKeyRetrieveFeedback(){
+   //Requesting API Point, get the output in term of JSOn file
+  $url = "https://irfanfreelancer.000webhostapp.com/prestige/api/FeedbackFromUser";
+  $json = json_decode(file_get_contents($url),true);
+  return $json;
+  
+
+}
+public function apiWithoutKeyCreateFeedback($name,$comment){
+
+
+
+$response =Http::post("https://irfanfreelancer.000webhostapp.com/prestige/api/FeedbackFromUser",
+['username'=>$name,"usernumberphone"=>"01173621","userfeedback"=>$comment]);
+$json_reponse = json_decode($response,true);
+return $json_reponse;
 }
 
     //
