@@ -17,6 +17,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+$(function)(){
+  $("#section_two").load("/html/blog.html");
+});
+</script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
@@ -61,11 +67,254 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 }
 
 
+* {
+  box-sizing: border-box;
+}
+
+#icjjcj{
+  display:inline-block;
+  transition-delay:1ms;
+}
+.header-banner{
+  padding-top:35px;
+  padding-bottom:100px;
+  color:rgb(255, 255, 255);
+  font-family:Helvetica, serif;
+  font-weight:100;
+  background-image:url(none), url(./img/work-desk.jpg);
+  background-attachment:scroll, scroll;
+  background-position-x:left, center;
+  background-position-y:top, center;
+  background-repeat-x:no-repeat, no-repeat;
+  background-repeat-y:repeat, no-repeat;
+  background-size:contain, cover;
+}
+.container-width{
+  width:90%;
+  max-width:1150px;
+  margin-top:0px;
+  margin-right:auto;
+  margin-bottom:0px;
+  margin-left:auto;
+}
+.lead-title{
+  margin-top:150px;
+  margin-right:0px;
+  margin-bottom:30px;
+  margin-left:0px;
+  font-size:40px;
+  text-align:center;
+  color:#000000;
+  background-color:#f8f8f8;
+  opacity:0.68;
+  width:50%;
+  margin:150px 9px 30px 30%;
+}
+.flex-sect{
+  background-color:rgb(250, 250, 250);
+  padding-top:100px;
+  padding-right:0px;
+  padding-bottom:100px;
+  padding-left:0px;
+  font-family:Helvetica, serif;
+}
+.flex-title{
+  margin-bottom:15px;
+  font-size:2em;
+  text-align:center;
+  font-weight:700;
+  color:rgb(85, 85, 85);
+  padding-top:5px;
+  padding-right:5px;
+  padding-bottom:5px;
+  padding-left:5px;
+}
+.flex-desc{
+  margin-bottom:55px;
+  font-size:1em;
+  color:rgba(0, 0, 0, 0.5);
+  text-align:center;
+  padding-top:5px;
+  padding-right:5px;
+  padding-bottom:5px;
+  padding-left:5px;
+}
+.cards{
+  padding-top:20px;
+  padding-right:0px;
+  padding-bottom:20px;
+  padding-left:0px;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:initial;
+  flex-wrap:wrap;
+}
+.card{
+  background-color:white;
+  height:300px;
+  width:300px;
+  margin-bottom:30px;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius:2px;
+  transition-duration:0.5s;
+  transition-timing-function:ease;
+  transition-delay:0s;
+  transition-property:all;
+  font-weight:100;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+.card:hover{
+  margin-top:-5px;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 20px 30px 0px;
+}
+.card-header{
+  height:155px;
+  background-image:url("//placehold.it/350x250/78c5d6/fff/image1.jpg");
+  background-size:cover;
+  background-position-x:center;
+  background-position-y:center;
+}
+.card-header.ch2{
+  background-image:url("//placehold.it/350x250/459ba8/fff/image2.jpg");
+}
+.card-header.ch3{
+  background-image:url("//placehold.it/350x250/79c267/fff/image3.jpg");
+}
+.card-header.ch4{
+  background-image:url("//placehold.it/350x250/c5d647/fff/image4.jpg");
+}
+.card-header.ch5{
+  background-image:url("//placehold.it/350x250/f28c33/fff/image5.jpg");
+}
+.card-header.ch6{
+  background-image:url("//placehold.it/350x250/e868a2/fff/image6.jpg");
+}
+.card-body{
+  padding-top:15px;
+  padding-right:15px;
+  padding-bottom:5px;
+  padding-left:15px;
+  color:rgb(85, 85, 85);
+}
+.card-title{
+  font-size:1.4em;
+  margin-bottom:5px;
+}
+.card-sub-title{
+  color:rgb(179, 179, 179);
+  font-size:1em;
+  margin-bottom:15px;
+}
+.card-desc{
+  font-size:0.85rem;
+  line-height:17px;
+}
+.am-sect{
+  padding-top:100px;
+  padding-bottom:100px;
+  font-family:Helvetica, serif;
+}
+.am-container{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-around;
+}
+.am-content{
+  float:left;
+  padding-top:7px;
+  padding-right:7px;
+  padding-bottom:7px;
+  padding-left:7px;
+  width:490px;
+  color:rgb(68, 68, 68);
+  font-weight:100;
+  margin-top:50px;
+}
+.am-pre{
+  padding-top:7px;
+  padding-right:7px;
+  padding-bottom:7px;
+  padding-left:7px;
+  color:rgb(177, 177, 177);
+  font-size:15px;
+}
+.am-title{
+  padding-top:7px;
+  padding-right:7px;
+  padding-bottom:7px;
+  padding-left:7px;
+  font-size:25px;
+  font-weight:400;
+}
+.am-desc{
+  padding-top:7px;
+  padding-right:7px;
+  padding-bottom:7px;
+  padding-left:7px;
+  font-size:17px;
+  line-height:25px;
+}
+.am-post{
+  padding-top:7px;
+  padding-right:7px;
+  padding-bottom:7px;
+  padding-left:7px;
+  line-height:25px;
+  font-size:13px;
+}
+.blk-sect{
+  padding-top:100px;
+  padding-bottom:100px;
+  background-color:rgb(34, 34, 34);
+  font-family:Helvetica, serif;
+}
+.bdg-sect{
+  padding-top:100px;
+  padding-bottom:100px;
+  font-family:Helvetica, serif;
+  background-color:rgb(250, 250, 250);
+}
+.c10816{
+  position:relative;
+  width:980px;
+  margin:0 auto;
+}
+.c10841{
+  width:880px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.c10886{
+  position:absolute;
+  display:block;
+  cursor:pointer;
+  top:50%;
+  left:0;
+  margin-top:-25px;
+}
+.c10922{
+  position:absolute;
+  display:block;
+  cursor:pointer;
+  top:50%;
+  right:0;
+  margin-top:-25px;
+}
+
+
 </style>
 <meta name="google-site-verification" content="PdLF89Amjja6DhbO1umcO5Mm9CJ1bhy8yZ0sAAmzOCA" />
 </head>
 <body class="w3-light-grey" style="background: linear-gradient(white,grey)">
   <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
+  <script src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/changecontent.js')}}" defer></script>
   
   
 <div class=".container" >
@@ -309,7 +558,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <div class="w3-row" name="content_two" style="display: none" id="content_two">
-  <h1>Hello, it is irfan</h1>
+  <!--This section is used for displaying all comment by the user or reader-->
+  @include("Blog")
 </div>
 
 
@@ -334,6 +584,6 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 </footer>
 </div>
-<script type="module" src="{{URL::asset('/js/changecontent.js')}}"></script>
+
 </body>
 </html>

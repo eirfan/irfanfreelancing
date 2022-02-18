@@ -8,6 +8,8 @@ var buttontwo = document.getElementById("button_content_two")
 var content_one = document.getElementById("content_one")
 var content_two = document.getElementById("content_two")
 var content_name = document.getElementById("content_name")
+
+
 console.log("READ here la");
 
 buttonone.onclick = function(){
@@ -31,6 +33,7 @@ $(content_two).fadeIn("slow");
    
    content_one.style.display="none"
    content_two.style.display="block";
+   
 }
 
 
