@@ -429,5 +429,6 @@ return $json_reponse;
 
  public function takepicture(){
    return view('TakingPicture');
+   //take picture
  }
 }
