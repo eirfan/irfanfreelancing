@@ -4,6 +4,7 @@
         
     </head>
     <body>
+        <script type="text/javascript" async src="{{URL::asset('https://irfanfreelancer.herokuapp.com/html/opencv.js')}}" defer></script>
         <div>
         <video id="videoInput"> 
 
@@ -37,13 +38,7 @@
        }
        setTimeout(processVideo,0)
      </script>
-     <script async src="opencv.js" type="text/javascript"></script>
+    
 
     </body>
 </html>
-
-<!--
-    References :
-    1.https://docs.opencv.org/3.4/dd/d00/tutorial_js_video_display.html
-
--->

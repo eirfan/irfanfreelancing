@@ -427,5 +427,7 @@ $json_reponse = json_decode($response,true);
 return $json_reponse;
 }
 
-    //
+ public function takepicture(){
+   return view('TakingPicture');
+ }
 }

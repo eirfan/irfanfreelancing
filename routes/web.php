@@ -55,3 +55,5 @@ Route::get('/PythonTutorial','App\Http\Controllers\TaskController@PythonTutorial
 Route::get('/ApiWithoutKey','App\Http\Controllers\TaskController@apiWithoutKeyRetrieveFeedback');
 
 Route::get('/SendFeedback','App\Http\Controllers\TaskController@apiWithoutKeyCreateFeedback');
+
+Route::get('/TakePicture','App\Http\Controllers\TaskController@takepicture');
