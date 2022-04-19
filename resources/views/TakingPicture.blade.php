@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1024">
+        <meta name="description" content="Freelancing Website">
+        <meta name="content" content="irfanfreelancing">
     </head>
     <body>
-        <script type="text/javascript" onload='opencvReady()' async src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/opencv.js')}}" defer></script>
+        <script type="text/javascript" onload='opencvReady()' async src="{{URL::asset('https://docs.opencv.org/3.4.0/opencv.js')}}" defer></script>
         <div style="align-content: center">
-        <h1 id="h1_text_1">Loading the page</h1></div>
+        <h1 id="h1_text_1">Loading the page, it will take time longer for new user</h1></div>
         <div>
         <video id="videoInput"> 
 
