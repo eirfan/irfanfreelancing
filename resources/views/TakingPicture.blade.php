@@ -28,26 +28,35 @@
            video.srcObject = stream;
            video.play();
        }).catch(function(err){
-           console.log("an error occured"+err);
-       });
-
-       let src = new cv.Mat(height, width, cv.CV_8UC4);
-       let dst = new cv.Mat(height,width,cv.CV_8UC1);
-       let cap = new cv.VideoCapture(videoSource);
-
-       const FPS =30;
-       function processVideo(){
-           console.log("running process Video function");
-           let begin = Date.now();
-           cap.read(src);
-           cv.cvtColor(src,dst,cv.COLOR_RGB2GRAY);
-           cv.imshow("canvasFrame",dst)
-           let delay = 1000/FPS - (Date.now()-begin);
-           setTimeout(processVideo,delay);
+           console.log("An error occured! +"+err);
        }
-       //schedule the first one
-       setTimeout(processVideo,0);
+       );
 
+       let cap = new cv.VideoCapture(video);
+       let src = new cv.Mat(video.height,video.width,cv.CV_8UC4);
+       let dst = new cv.Mat(video.height,video.width,cv.CV_8UC1);
+       const FPS = 30;
+       function processVideo(){
+           console.log("Reading Process Video fuunction")
+           try{
+               if(!streaming){
+                   src.delete();
+                   dst.delete();
+                   return;
+               }
+               let begin = Date.now();
+               cap.read(src);
+               cv.cvtColor(src,dst,cv.COLOR_RGB2GRAY);
+               cv.imshow('canvasFrame',dst);
+               let delay = 1000/FPS - (Date.now() - begin);
+               setTimeout(processVideo,delay);
+
+           } catch(err){
+               console.log("Error : "+err);
+           }
+           
+       };
+       setTimeout(processVideo,0)
      </script>
 
 
