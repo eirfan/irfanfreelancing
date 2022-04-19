@@ -5,7 +5,8 @@
     </head>
     <body>
         <script type="text/javascript" onload='opencvReady()' async src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/opencv.js')}}" defer></script>
-        
+        <div style="align-content: center">
+        <h1 id="h1_text_1">Loading the page</h1></div>
         <div>
         <video id="videoInput"> 
 
@@ -15,6 +16,8 @@
      <script type="text/javascript">
        function opencvReady(){
            console.log("OpenCV.JS library ready");
+           h1_text = document.getElementById("h1_text_1");
+           h1_text.innerHTML = "done loading";
        }
 
        let video = document.getElementById("videoInput");
