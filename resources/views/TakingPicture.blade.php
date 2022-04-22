@@ -129,9 +129,9 @@
         var imageblob;
         fetch(imageURI).then(res => res.blob()).then(function(blob){
             console.log(blob);
-            //var storageRef = firebase.storage().ref();
-            //var studentImageRef = storageRef.child('irfan/irfan'+imagenumber+'.jpg')
-           // var uploadTask = studentImageRef.put(blob)
+           var storageRef = firebase.storage().ref();
+           var studentImageRef = storageRef.child('irfan/irfan'+imagenumber+'.jpg')
+            var uploadTask = studentImageRef.put(blob)
             
             
             
