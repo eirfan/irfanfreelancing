@@ -8,7 +8,8 @@
         
         
         <script type="text/javascript" onload='readVideo()'  src="{{URL::asset('https://docs.opencv.org/3.4.0/opencv.js')}}" defer>
-            <script type="text/javascript" async onload='opentfReady()' src="{{URL::asset('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js')}}" defer></script>
+        <script type="text/javascript" async onload='opentfReady()' src="{{URL::asset('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js')}}" defer></script>
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     </head>
     <body>
         
@@ -26,6 +27,7 @@
 
      <script type="text/javascript">
         let video = document.getElementById("videoInput");
+        let canvas = document.getElementById("canvasFrame");
         
         var faceCascade;
         var faces;
@@ -49,6 +51,14 @@
    
       
        function readVideo(){
+        var firebaseConfig = {
+          apiKey : 'AIzaSyAy7CsmyS90kzk_YqwEXy_Kyt4wPXTu1lg',
+          authDomain : 'studentattendance-8069d.firebaseapp.com',
+          storageBucket : 'studentattendance-8069d.appspot.com'
+
+      };   
+      firebase.initializeApp(firebaseConfig);
+      var storage = firebase.storage();
         faceCascade = new cv.CascadeClassifier();
         faces = new cv.RectVector();
         faceCascadeFile = 'haarcascade_frontalface_default.xml';
@@ -111,26 +121,31 @@
                let point1 = new cv.Point(face.x,face.y);
                let point2 = new cv.Point(face.x+face.width,face.y+face.height);
                cv.rectangle(dst,point1,point2,[255,0,0,255]);
+               let rect = new cv.Rect(face.x,face.y,face.width,face.height);
+               imageface = src.roi(rect);
+
            }
+        cv.imshow(canvas,imageface);
+        var imageURI = canvas.toDataURL();
+        var imageblob;
+        fetch(imageURI).then(res => res.blob()).then(function(blob){
+            console.log(blob);
+            var storageRef = firebase.storage().ref();
+            var studentImageRef = storageRef.child('irfan/irfan.jpg')
+            var uploadTask = studentImageRef.put(blob)
+        });
+        
+       
+        let delay = 1000/FPS - (Date.now() - begin);
+        setTimeout(processVideo,delay);
            
         }
         catch(err){
             console.log(err)
             console.log("Cannot detect face")
         }
-        cv.imshow("canvasFrame",dst);
-        let delay = 1000/FPS - (Date.now() - begin);
-        setTimeout(processVideo,10);
-    
-
-}
-        
-       
+}       
      </script>
-
-
-
-
     
 
     </body>
