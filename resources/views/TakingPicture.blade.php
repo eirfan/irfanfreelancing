@@ -26,6 +26,10 @@
 
      <script type="text/javascript">
         let video = document.getElementById("videoInput");
+        
+        var faceCascade;
+        var faces;
+        var msize;
         video.width = 640;
         video.height = 480;
         var height;
@@ -42,7 +46,32 @@
            h1_text_2.innerHTML = "Tensorflow ready";
            
        }
+   
+      
        function readVideo(){
+        faceCascade = new cv.CascadeClassifier();
+        faces = new cv.RectVector();
+        faceCascadeFile = 'haarcascade_frontalface_default.xml';
+        let xhttp = new XMLHttpRequest();
+           xhttp.open("GET","https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml",true);
+           xhttp.responseType="arraybuffer";
+           xhttp.onload=function(ev){
+               if(xhttp.readyState == 4 ){
+                   if(xhttp.status == 200){
+                       let data = new Uint8Array(xhttp.response);
+                       cv.FS_createDataFile('/',faceCascadeFile,data,true,false,false);
+                       faceCascade.load(faceCascadeFile);
+                       console.log("succefully load "+faceCascadeFile+"status :"+xhttp.status);
+                   }
+                   else{
+                       console.log("failed to load"+faceCascadeFile+"status : "+xhttp.status);
+                   }
+               }
+           };
+           xhttp.send();
+           
+        
+        msize = new cv.Size(0,0);
         navigator.mediaDevices.getUserMedia({video:true,audio:false}).then(function(stream){
            
            video.srcObject = stream;
@@ -61,19 +90,37 @@
        }
 
        function processVideo(){     
-        const FPS = 30;
-        opencvReady()
+        const FPS = 60;
+       
         
         let cap = new cv.VideoCapture(video);
         
         let src = new cv.Mat(height,width,cv.CV_8UC4);
         let dst = new cv.Mat(height,width,cv.CV_8UC1);
         let begin = Date.now();
+        
         cap.read(src);
         cv.cvtColor(src,dst,cv.COLOR_BGR2GRAY);
+        try{
+
+        
+           faceCascade.detectMultiScale(dst,faces,1.1,3,0);
+           console.log("detecting face")
+           for (let i=0;i<faces.size();i++){
+               let face =faces.get(i);
+               let point1 = new cv.Point(face.x,face.y);
+               let point2 = new cv.Point(face.x+face.width,face.y+face.height);
+               cv.rectangle(dst,point1,point2,[255,0,0,255]);
+           }
+           
+        }
+        catch(err){
+            console.log(err)
+            console.log("Cannot detect face")
+        }
         cv.imshow("canvasFrame",dst);
         let delay = 1000/FPS - (Date.now() - begin);
-        setTimeout(processVideo,delay);
+        setTimeout(processVideo,10);
     
 
 }
