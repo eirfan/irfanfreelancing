@@ -28,7 +28,7 @@
      <script type="text/javascript">
         let video = document.getElementById("videoInput");
         let canvas = document.getElementById("canvasFrame");
-        
+        const FPS = 60;
         var faceCascade;
         var faces;
         var msize;
@@ -36,6 +36,7 @@
         video.height = 480;
         var height;
         var width;
+        let imagenumber = 0;
        
        function opencvReady(){
            console.log("OpenCV.JS library ready");
@@ -99,9 +100,7 @@
        );
        }
 
-       function processVideo(){     
-        const FPS = 60;
-       
+       function processVideo(){         
         
         let cap = new cv.VideoCapture(video);
         
@@ -130,12 +129,19 @@
         var imageblob;
         fetch(imageURI).then(res => res.blob()).then(function(blob){
             console.log(blob);
-            var storageRef = firebase.storage().ref();
-            var studentImageRef = storageRef.child('irfan/irfan.jpg')
-            var uploadTask = studentImageRef.put(blob)
+            //var storageRef = firebase.storage().ref();
+            //var studentImageRef = storageRef.child('irfan/irfan'+imagenumber+'.jpg')
+           // var uploadTask = studentImageRef.put(blob)
+            
+            
+            
         });
         
-       
+        imagenumber = imagenumber + 1; 
+        console.log(imagenumber);
+        if (imagenumber == 10){
+                return ;
+            }
         let delay = 1000/FPS - (Date.now() - begin);
         setTimeout(processVideo,delay);
            
