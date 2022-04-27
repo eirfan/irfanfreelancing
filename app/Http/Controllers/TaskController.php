@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Exceptions\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -422,7 +423,9 @@ public function apiWithoutKeyCreateFeedback($name,$comment){
 
 
 $response =Http::post("https://irfanfreelancer.000webhostapp.com/prestige/api/FeedbackFromUser",
-['username'=>$name,"usernumberphone"=>"01173621","userfeedback"=>$comment]);
+['username'=>$name,
+"usernumberphone"=>"01173621",
+"userfeedback"=>$comment]);
 $json_reponse = json_decode($response,true);
 return $json_reponse;
 }
@@ -431,4 +434,36 @@ return $json_reponse;
    return view('TakingPicture');
    //take picture
  }
+
+ public function registerstudent(){
+   return view('RegisterStudent');
+ }
+
+ public function registerstudentoperation(Request $request){
+   $studentname = $request->get('fullname');
+   $studentmatricnumber = $request->get('matricnumber');
+   $studentphonenumber = $request->get('phonenumber');
+   $studentcourse = $request->get('studentcourse');
+   $studentsemester = $request->get('semester');
+   $studentcgpa = $request->get('cgpa');
+   echo "name :".$studentname."studentmatricnumber".$studentmatricnumber;
+   echo "studentphonenumber : ".$studentphonenumber."Student course : ".$studentcourse;
+   echo "Student semester : ".$studentsemester."Student CGPA : ".$studentcgpa;
+   
+  try{ 
+ /* $response = Http::post("https://irfanfreelancer.000webhostapp.com/prestige/api/Student",
+  ["student_name"=>$studentname,
+"student_matricNo"=>$studentmatricnumber,
+"student_phoneNo"=>$studentphonenumber,
+"student_course"=>$studentcourse,
+"student_semester"=>$studentsemester,
+"student_cgpa"=>$studentcgpa]);
+$json_response =json_decode($response,true);
+*/
+return view("TakingPicture")->with("studentname",$studentname);
+  }catch(Exception $exception){
+   echo"Cannot save student information to database";
+  }
+ }
+
 }

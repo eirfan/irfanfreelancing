@@ -57,3 +57,7 @@ Route::get('/ApiWithoutKey','App\Http\Controllers\TaskController@apiWithoutKeyRe
 Route::get('/SendFeedback','App\Http\Controllers\TaskController@apiWithoutKeyCreateFeedback');
 
 Route::get('/TakePicture','App\Http\Controllers\TaskController@takepicture');
+
+Route::get('RegisterStudent','App\Http\Controllers\TaskController@registerstudent');
+
+Route::post('/registerstudentoperation','App\Http\Controllers\TaskController@registerstudentoperation');

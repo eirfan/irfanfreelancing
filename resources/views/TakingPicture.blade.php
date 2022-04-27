@@ -2,32 +2,46 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=1024">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Freelancing Website">
         <meta name="content" content="irfanfreelancing">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5b245a5d8a.js" crossorigin="anonymous"></script>
         
-        
-        <script type="text/javascript" onload='readVideo()'  src="{{URL::asset('https://docs.opencv.org/3.4.0/opencv.js')}}" defer>
+        <script type="text/javascript" onload="readVideo()"  src="{{URL::asset('https://docs.opencv.org/3.4.0/opencv.js')}}" defer>
         <script type="text/javascript" async onload='opentfReady()' src="{{URL::asset('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js')}}" defer></script>
         <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     </head>
     <body>
         
-        <div style="align-content: center">
-        <h1 id="h1_text_1">Loading the page, it will take time longer for new user</h1></div>
-        <h1 id="h1_text_2">Loading tensorflow. Please wait for a moment</h1>
-        <div>
-        <video style="height:200px,width:200px" id="videoInput"> 
-
+        <div class="container">
+            <div class='row' >
+                <div class="col-sm-8">
+       
+        <video style="" id="videoInput"> 
+          
         </video>
-        <canvas id="canvasFrame"></canvas>
-        </div>
-        <br/>
-        <button id='button_takecamera'></button>
+        <canvas id="canvasFrame" style="visibility:hidden !important;width:480px;height:640px"></canvas>
+        
+        
+    </div>
+    
+    </div>
+    <div class="row" style="width:60px;height:60px">
+        <button id='button_takecamera' disabled style="justify-content:center" onclick="opencvReady()" class="btn btn-lg btn-primary rounded-circle" ><i class="fa-solid fa-camera"></i></button></div>
+    </div>
+    <h1 id="studentname">{{$studentname}}</h1>
+        
 
      <script type="text/javascript">
         let video = document.getElementById("videoInput");
         let canvas = document.getElementById("canvasFrame");
+        let context = canvas.getContext('2d');
+        let takecbutton = document.getElementById("button_takecamera");
+        let studentname = document.getElementById("studentname");
+        let valstudentname = studentname.innerHTML
+        console.log("Student name :"+valstudentname);
         const FPS = 60;
         var faceCascade;
         var faces;
@@ -40,8 +54,7 @@
        
        function opencvReady(){
            console.log("OpenCV.JS library ready");
-           h1_text = document.getElementById("h1_text_1");
-           h1_text.innerHTML = "done loading";
+          
        }
        function opentfReady(){
            console.log("Tensorflow.js Library ready");
@@ -102,18 +115,16 @@
 
        function processVideo(){         
         
-        let cap = new cv.VideoCapture(video);
+        var cap = new cv.VideoCapture(video);
         
-        let src = new cv.Mat(height,width,cv.CV_8UC4);
-        let dst = new cv.Mat(height,width,cv.CV_8UC1);
+        var src = new cv.Mat(height,width,cv.CV_8UC4);
+        var dst = new cv.Mat(height,width,cv.CV_8UC1);
         let begin = Date.now();
         
         cap.read(src);
         cv.cvtColor(src,dst,cv.COLOR_BGR2GRAY);
         try{
-
-        
-           faceCascade.detectMultiScale(dst,faces,1.1,3,0);
+           faceCascade.detectMultiScale(dst,faces,1.1,10,(64,64));
            console.log("detecting face")
            for (let i=0;i<faces.size();i++){
                let face =faces.get(i);
@@ -124,24 +135,25 @@
                imageface = src.roi(rect);
 
            }
-        cv.imshow(canvas,imageface);
-        var imageURI = canvas.toDataURL();
-        var imageblob;
-        fetch(imageURI).then(res => res.blob()).then(function(blob){
-            console.log(blob);
-           var storageRef = firebase.storage().ref();
-           var studentImageRef = storageRef.child('irfan/irfan'+imagenumber+'.jpg')
-            var uploadTask = studentImageRef.put(blob)
+           if(imageface != null && imagenumber <=10){
+            cv.imshow(canvas,imageface);
+           // takecbutton.disabled = false;
+           var imageURI = canvas.toDataURL();
+           var imageblob;
+           fetch(imageURI).then(res => res.blob()).then(function(blob){
+              console.log(blob);
+              var storageRef = firebase.storage().ref();
+              var studentImageRef = storageRef.child(valstudentname+'/'+valstudentname+imagenumber+'.jpg')
+              var uploadTask = studentImageRef.put(blob)
+           }).then(function(){
+            imagenumber = imagenumber + 1; 
+            imageface.delete();
+           });
             
-            
-            
-        });
+           }
         
-        imagenumber = imagenumber + 1; 
         console.log(imagenumber);
-        if (imagenumber == 10){
-                return ;
-            }
+        
         let delay = 1000/FPS - (Date.now() - begin);
         setTimeout(processVideo,delay);
            
@@ -149,8 +161,17 @@
         catch(err){
             console.log(err)
             console.log("Cannot detect face")
+            context.clearRect(0,0,canvas.width,canvas.height);
+            takecbutton.disabled = true;
+            let delay = 1000/FPS - (Date.now() - begin);
+            setTimeout(processVideo,delay)
         }
-}       
+}  
+
+function takepicture(){
+   
+        
+}
      </script>
     
 
@@ -161,5 +182,7 @@
 <?php /*
 References :
 1. https://codesandbox.io/s/opencvjs-getting-started-with-videos-adapted-ptmye
+2. https://getbootstrap.com/docs/5.1/getting-started/introduction/
 
-*/?>
+*/
+?>
