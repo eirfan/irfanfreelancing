@@ -4,6 +4,7 @@
     <title>Educational registration form</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script src={{URL::asset('/js/checkstud.js')}}></script>
     <style>
       html, body {
       min-height: 100%;
@@ -16,6 +17,7 @@
       font-size: 16px;
       color: #eee;
       }
+      
       body {
       background: url("/uploads/media/default/0001/01/b5edc1bad4dc8c20291c8394527cb2c5b43ee13c.jpeg") no-repeat center;
       background-size: cover;
@@ -131,19 +133,19 @@
           
         </div>
       </div>
-      <form action="/registerstudentoperation" method = "post" enctype="multipart/form-data">
+      <form action="/registerstudentoperation"  method = "post" enctype="multipart/form-data">
        @csrf
         <div class="title">
             <i class="fas fa-graduation-cap"></i> 
           <h2>Register here</h2>
         </div>
         <div class="info">
-          <input class="fname" type="text" name="fullname" placeholder="Full Name">
-          <input type="text" name="matricnumber" placeholder="Matric Number">
-          <input type="text" name="phonenumber" placeholder="Phone Number">
+          <input  style="text-transform:uppercase" required class="fname" type="text" name="fullname" placeholder="Full Name">
+          <input pattern="[0-9]{10}"  required type="text" name="matricnumber" placeholder="MATRIC NUMBER">
+          <input required type="tel" name="phonenumber" placeholder="PHONE NUMBER">
           
-          <select name ="studentcourse">
-            <option value="CS110" selected disabled hidden>Student Course</option>
+          <select required name ="studentcourse">
+            <option value="CS110" selected disabled hidden>STUDENT COURSE</option>
             <option value="CS110" >CS110</option>
             <option value="CS230">CS230</option>
             <option value="CS240">CS240</option>
@@ -152,13 +154,20 @@
             <option value="CS255">CS255</option>
             <option value="CS266">CS266</option>
           </select>
-          <input type="number" name='semester' max=7 min=0 placeholder="Semester"/>
-          <input type="number" name='cgpa' step=".01" max=4.00 min=0.00 placeholder="CGPA"/>
+          <input required type="number" name='semester' max=7 min=0 placeholder="SEMESTER"/>
+          <input required type="number" name='cgpa' step=".01" max=4.00 min=0.00 placeholder="CGPA"/>
         </div>
         <div class="checkbox">
-          <input type="checkbox" name="checkbox"><span>I agree to share my personal data as stated in  <a href="/">Privacy Poalicy</a></span>
+          <input required type="checkbox" name="checkbox"><span>I agree to share my personal data as stated in  <a href="/permissionletter">Privacy Poalicy</a></span>
         </div>
-        <button type="submit" href="/">Take Picture</button>
+        <button  id='registerstudsub' href="/">Take Picture</button>
       </form>
     </div>
+   
   </body>
+
+  <!--
+  references :
+  1.https://www.w3schools.com/html/html_form_attributes.asp
+  -->
+  </html>

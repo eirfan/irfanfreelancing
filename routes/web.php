@@ -61,3 +61,5 @@ Route::get('/TakePicture','App\Http\Controllers\TaskController@takepicture');
 Route::get('RegisterStudent','App\Http\Controllers\TaskController@registerstudent');
 
 Route::post('/registerstudentoperation','App\Http\Controllers\TaskController@registerstudentoperation');
+
+Route::get('/permissionletter','App\Http\Controllers\TaskController@permissionletter');
