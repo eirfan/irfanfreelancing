@@ -540,12 +540,12 @@
 </style>
         </head>
         <p name='studentname' id='studentname' style="visibility:hidden !important;display:none !important" >{{$studentname}}</p>
-    <body style="height:1000px;width:100%;overflow:scroll">
+    <body style="height:1000px;width:100%;overflow:scroll;background-color:#0a1727">
         
-        <div class="container" id="videocontainer"  style="display:none;margin-top:40px;background-color:rgb(70, 66, 66);width:100%;height:50%;content-align:center">
+        <div class="container" id="videocontainer"  style="display:none;margin-top:40px;background-color:rgb(255, 255, 255);width:100%;height:50%;content-align:center">
             
        
-        <video class="container" style="margin-top:10px;border-style:outset;border-width:3px;border-color:black" id="videoInput" style="height:1000px !important;width:460px !important" > 
+        <video class="container" style="margin-top:0px;border-style:outset;border-width:3px;border-color:black;" id="videoInput" > 
           
         </video>
         <canvas id="canvasFrame" style="display:none !important;visibility:hidden !important;width:480px;height:640px"></canvas>
@@ -582,7 +582,7 @@
  <div class="Buttons">
     <a class="Button"  style="text-decoration:none;" onclick="processVideo()">Start<span class="Button-mask Button-rotates rotates-c-clockwise Graident-two"></span></a>
     </div>
-    <a href='/' style="margin-top: 100px;font-size:16px">Guideline</a>
+    <a href='/' style="margin-top: 100px;font-size:16px;color:white">Guideline</a>
  </div>
  
 
@@ -610,11 +610,11 @@
         var faceCascade;
         var faces;
         var msize;
-        video.width = 640;
-        video.height = 480;
-        var height;
-        var width;
-        let imagenumber = 120;
+        video.width = 900;
+        video.height = 500;
+        var height=video.height;
+        var width=video.width;
+        let imagenumber = 0;
        
        function tryreadhere(){
            console.log("try read here clicked");
