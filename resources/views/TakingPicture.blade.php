@@ -462,16 +462,13 @@
         <p name='studentname' id='studentname' style="visibility:hidden !important;display:none !important" >{{$studentname}}</p>
     <body style="height:1000px;width:100%;overflow:scroll">
         
-        <div  style="background-color:rgb(70, 66, 66);width:100%;height:50%">
-            <div class='row'  >
-                <div class="col-sm-8" >
+        <div class="container"  style="margin-top:40px;background-color:rgb(70, 66, 66);width:100%;height:50%;content-align:center">
+            
        
-        <video style="" id="videoInput"> 
+        <video class="container" style="margin-top:10px;border-style:outset;border-width:3px;border-color:black" id="videoInput" style="height:1000px !important;width:460px !important" > 
           
         </video>
         <canvas id="canvasFrame" style="display:none !important;visibility:hidden !important;width:480px;height:640px"></canvas>
-    </div>
-    </div>
     </div>
     
     
@@ -547,6 +544,7 @@
    
       
        function readVideo(){
+        takecbutton.style.display='none'
         var firebaseConfig = {
           apiKey : 'AIzaSyAy7CsmyS90kzk_YqwEXy_Kyt4wPXTu1lg',
           authDomain : 'studentattendance-8069d.firebaseapp.com',
