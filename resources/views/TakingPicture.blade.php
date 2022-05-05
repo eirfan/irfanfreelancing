@@ -457,12 +457,92 @@
         transform: translate(-50%, -50%) rotate(0deg);
         box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, 0.7);
     }
-}</style>
+}
+.ButtonContainer {
+    position: relative;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.Button {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.0625rem;
+    margin-top: 1.5625rem;
+    padding: 1.5625rem 2.1875rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+    will-change: transform;
+    z-index: 1;
+}
+
+.Button-mask {
+    position: absolute;
+    transition: transform 0.425s ease-in-out;
+    z-index: -1;
+}
+
+.Button-mask.slides-left {
+    left: 0;
+}
+
+.Button-mask.slides-right {
+    right: 0;
+}
+
+.Button-slides {
+    top: 0;
+    width: 200%;
+    height: 100%;
+}
+
+.Button-rotates {
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 600%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.Button:hover .Button-mask.slides-left {
+    transform: translate3d(-50%, 0, 0);
+}
+
+.Button:hover .Button-mask.slides-right {
+    transform: translate3d(50%, 0, 0);
+}
+
+.Button:hover .Button-mask.rotates-clockwise {
+    transform: rotate(180deg) translate3d(50%, 50%, 0);
+}
+
+.Button:hover .Button-mask.rotates-c-clockwise {
+    transform: rotate(-180deg) translate3d(50%, 50%, 0);
+}
+.Graident-four {
+    background: linear-gradient(135deg, #e32d76 0%, #648fe6 100%);
+}
+.Graident-two {
+    background: linear-gradient(135deg, #00c7c5 0%, #0088d7 100%);
+}
+</style>
         </head>
         <p name='studentname' id='studentname' style="visibility:hidden !important;display:none !important" >{{$studentname}}</p>
     <body style="height:1000px;width:100%;overflow:scroll">
         
-        <div class="container"  style="margin-top:40px;background-color:rgb(70, 66, 66);width:100%;height:50%;content-align:center">
+        <div class="container" id="videocontainer"  style="display:none;margin-top:40px;background-color:rgb(70, 66, 66);width:100%;height:50%;content-align:center">
             
        
         <video class="container" style="margin-top:10px;border-style:outset;border-width:3px;border-color:black" id="videoInput" style="height:1000px !important;width:460px !important" > 
@@ -496,7 +576,13 @@
      <div class='camera-bottom'></div>
      <br/>
      <br/>
-     <a href='/' style="margin-top: 100px">Guideline here</a>
+     
+ </div>
+ <div class="ButtonContainer" id='buttoncontainer' style="display:none">
+ <div class="Buttons">
+    <a class="Button"  style="text-decoration:none;" onclick="processVideo()">Start<span class="Button-mask Button-rotates rotates-c-clockwise Graident-two"></span></a>
+    </div>
+    <a href='/' style="margin-top: 100px;font-size:16px">Guideline</a>
  </div>
  
 
@@ -516,7 +602,9 @@
         let context = canvas.getContext('2d');
         let takecbutton = document.getElementById("button_takecamera");
         let studentname = document.getElementById("studentname");
-        let valstudentname = studentname.innerHTML
+        let valstudentname = studentname.innerHTML;
+        let buttoncontainer = document.getElementById("buttoncontainer");
+        let videocontainer = document.getElementById("videocontainer");
         console.log("Student name :"+valstudentname);
         const FPS = 60;
         var faceCascade;
@@ -526,7 +614,7 @@
         video.height = 480;
         var height;
         var width;
-        let imagenumber = 0;
+        let imagenumber = 120;
        
        function tryreadhere(){
            console.log("try read here clicked");
@@ -545,6 +633,8 @@
       
        function readVideo(){
         takecbutton.style.display='none'
+        buttoncontainer.style.display ='block';
+        videocontainer.style.display = "block";
         var firebaseConfig = {
           apiKey : 'AIzaSyAy7CsmyS90kzk_YqwEXy_Kyt4wPXTu1lg',
           authDomain : 'studentattendance-8069d.firebaseapp.com',
