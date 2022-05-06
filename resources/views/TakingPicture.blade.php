@@ -617,6 +617,7 @@
         var height=video.height;
         var width=video.width;
         let imagenumber = 0;
+        var imageface = null;
        
        function tryreadhere(){
            console.log("try read here clicked");
@@ -737,7 +738,7 @@
         }
         catch(err){
             console.log(err)
-            numberofimages.innerHTML = "Cannot Detect face";
+            numberofimages.innerHTML = err;
             console.log("Cannot detect face")
             context.clearRect(0,0,canvas.width,canvas.height);
             takecbutton.disabled = true;
