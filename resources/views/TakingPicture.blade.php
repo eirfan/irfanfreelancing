@@ -612,8 +612,8 @@
         var faceCascade;
         var faces;
         var msize;
-        video.width = 900;
-        video.height = 500;
+        video.width = 640;
+        video.height = 480;
         var height=video.height;
         var width=video.width;
         let imagenumber = 0;
@@ -711,7 +711,8 @@
                imageface = src.roi(rect);
 
            }
-           if(imageface != null && imagenumber <=10){
+           if(imageface != null){
+               if(imagenumber<=10){
             cv.imshow(canvas,imageface);
            // takecbutton.disabled = false;
            var imageURI = canvas.toDataURL();
@@ -726,8 +727,14 @@
             numberofimages.innerHTML = imagenumber;
             imageface.delete();
            });
-            
+        }
+        else{
+            numberofimage.innerHTML="Done taking image";
+        }
+           }else{
+               numberofimages.innerHTML = "cannot detect face"
            }
+           
            
         
         console.log(imagenumber);
