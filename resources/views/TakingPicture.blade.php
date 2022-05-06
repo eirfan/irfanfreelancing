@@ -583,6 +583,7 @@
     <a class="Button"  style="text-decoration:none;" onclick="processVideo()">Start<span class="Button-mask Button-rotates rotates-c-clockwise Graident-two"></span></a>
     </div>
     <a href='/' style="margin-top: 100px;font-size:16px;color:white">Guideline</a>
+    <p style="margin-bottom:0px;padding-top:0px;font-size:24px;color:white">Number of images taken : <p style="font-size:46px;color:white;margin-top:0px" id='numberofimages'>0</p></p>
  </div>
  
 
@@ -605,6 +606,7 @@
         let valstudentname = studentname.innerHTML;
         let buttoncontainer = document.getElementById("buttoncontainer");
         let videocontainer = document.getElementById("videocontainer");
+        let numberimages = document.getElementById("numberofimages");
         console.log("Student name :"+valstudentname);
         const FPS = 60;
         var faceCascade;
@@ -720,10 +722,12 @@
               var uploadTask = studentImageRef.put(blob)
            }).then(function(){
             imagenumber = imagenumber + 1; 
+            numberofimages.innerHTML = imagenumber;
             imageface.delete();
            });
             
            }
+           
         
         console.log(imagenumber);
         
@@ -733,6 +737,7 @@
         }
         catch(err){
             console.log(err)
+            numberofimages.innerHTML = "Cannot Detect face";
             console.log("Cannot detect face")
             context.clearRect(0,0,canvas.width,canvas.height);
             takecbutton.disabled = true;
