@@ -548,7 +548,7 @@
         <video class="container" style="margin-top:0px;border-style:outset;border-width:3px;border-color:black;" id="videoInput" > 
           
         </video>
-        <canvas id="canvasFrame" style="display:none !important;visibility:hidden !important;width:480px;height:640px"></canvas>
+        <canvas id="canvasFrame" style="width:200px;height:300px"></canvas>
     </div>
     
     
@@ -585,7 +585,8 @@
     <a href='/' style="margin-top: 100px;font-size:16px;color:white">Guideline</a>
     <p style="margin-bottom:0px;padding-top:0px;font-size:24px;color:white">Number of images taken : <p style="font-size:46px;color:white;margin-top:0px" id='numberofimages'>0</p></p>
  </div>
- 
+ <div class="container" id="imageface" style="background-color:whitesmoke;height:auto;width:100%">
+</div>
 
  
     
@@ -607,6 +608,7 @@
         let buttoncontainer = document.getElementById("buttoncontainer");
         let videocontainer = document.getElementById("videocontainer");
         let numberimages = document.getElementById("numberofimages");
+        let imagefacespace = document.getElementById("imageface");
         console.log("Student name :"+valstudentname);
         const FPS = 60;
         var faceCascade;
@@ -717,11 +719,22 @@
            // takecbutton.disabled = false;
            var imageURI = canvas.toDataURL();
            var imageblob;
+           var newtagimage = document.createElement("img");
+           newtagimage.style.height=canvas.height;
+           newtagimage.style.width = canvas.width;
+              newtagimage.src = imageURI
+              imagefacespace.appendChild(newtagimage);
+              
+           
+              
            fetch(imageURI).then(res => res.blob()).then(function(blob){
+              
               console.log(blob);
+              console.log("detecting image");
               var storageRef = firebase.storage().ref();
               var studentImageRef = storageRef.child(valstudentname+'/'+valstudentname+imagenumber+'.jpg')
-              var uploadTask = studentImageRef.put(blob)
+             var uploadTask = studentImageRef.put(blob)
+            
            }).then(function(){
             imagenumber = imagenumber + 1; 
             numberofimages.innerHTML = imagenumber;
@@ -744,8 +757,12 @@
            
         }
         catch(err){
-            console.log(err)
-            numberofimages.innerHTML = err;
+            if(imagenumber > 10){
+                
+            }else{
+            alert("Cannot detect face")}
+            //console.log(err)
+            //numberofimages.innerHTML = err;
             console.log("Cannot detect face")
             context.clearRect(0,0,canvas.width,canvas.height);
             takecbutton.disabled = true;
