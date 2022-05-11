@@ -451,7 +451,7 @@ return $json_reponse;
   // echo "Student semester : ".$studentsemester."Student CGPA : ".$studentcgpa;
    
   try{ 
- /* $response = Http::post("https://irfanfreelancer.000webhostapp.com/prestige/api/Student",
+  $response = Http::post("https://irfanfreelancer.000webhostapp.com/prestige/api/Student",
   ["student_name"=>$studentname,
 "student_matricNo"=>$studentmatricnumber,
 "student_phoneNo"=>$studentphonenumber,
@@ -459,7 +459,7 @@ return $json_reponse;
 "student_semester"=>$studentsemester,
 "student_cgpa"=>$studentcgpa]);
 $json_response =json_decode($response,true);
-*/
+
 return view("TakingPicture")->with("studentname",$studentname);
   }catch(Exception $exception){
    echo"Cannot save student information to database";
