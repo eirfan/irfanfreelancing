@@ -29,12 +29,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .java {width: 90%;background-color: #33AFFF}
 .oop{width:90%;background-color: #EEE86C}
 
+.w3-light-grey{
+  color:black
+}
 
 </style>
-<body class="w3-light-grey">
+<body class="w3-light-grey" style="overflow: scroll " >
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="w3-content w3-margin-top" style="max-width:1400px;color:black">
 
   <!-- The Grid -->
   <div class="w3-row-padding">
@@ -50,16 +53,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
         </div>
         <div class="w3-container">
-          <p ><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Studying Major in Science Computer</p>
-          <p ><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Universiti Teknologi Mara, UiTM</p>
+          <p ><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>BACHELOR DEGREE OF COMPUTER SCIENCE(HONS)</p>
+          <p ><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>MARA UNIVERSITY OF TECHNOLOGY, UITM</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>2019422662@student.uitm.edu.my</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><a href='https://wa.me/601169912862'>01169912862</a></p>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Multimedia</p>
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>TECHNICAL SKILLS</b></p>
+          <p>Graphic Design, UI and UX</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:76%">76%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:76%">INTERMEDIATE</div>
           </div>
           <p>Web Development</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
@@ -147,65 +150,59 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       </div>
 
 
-<div class="w3-container w3-card w3-white w3-margin-top">
-  <h1>Certificates Hall</h1>
-  <div style="display:inline-block;height:100%;width:100%;overflow:scroll">
-   <img src="{{url('COCOne.png')}}" style="width:200px; height:120%;"/>
-   <img src="{{url('COCtwo.jpg')}}" style="width:200px; height:120%;"/>
-   <img src="{{url('COCthree.png')}}" style="width:200px;height:120%"/>
-   <img src="{{url('COCfour.png')}}" style="width:150px;height:120%"/>
-   <img src="{{url('COCfive.png')}}" style="width:150px;height:120%"/>
-   <img src="{{url('COCsix.png')}}" style="width:200px;height:120%"/>
- </div>
-</div>
+
     <!-- End Right Column -->
     </div>
-
+   
   <!-- End Grid -->
   </div>
-  <div class="w3-container w3-card w3-white" style="overflow: scroll">
-    <h1>Programmigng Languages</h1>
-    <p>HTML</p>
-  <div class="container">
-    <div class="skills html">87%</div>
+  <div class="w3-container w3-card w3-white w3-margin-top">
+    <h1 style="text-align: center;font-weight:bold">Certificates Hall</h1>
+    <div style="display:inline-block;height:100%;width:100%;overflow:scroll">
+    <div class='grid-container'>
+      <div class="grid-item" >
+     <img  src="{{url('COCOne.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Completion issued by the UiTM Massive Open Online Course,<br/>
+    (Mobile Application and Content Development)</p>
+    </div>
+    <div class="grid-item">
+     <img src="{{url('COCtwo.jpg')}}" style="width:400px; height:200%;"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Completion issued by the Sololearn Java Course</p>
+    </div>
+    <div class="grid-item">
+     <img src="{{url('COCthree.png')}}" style="width:400px;height:200%"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Completion issued by the UiTM Massive Open Online Course,<br/>(Data Mining)</p>
+    </div>
+    <div class="grid-item">
+     <img src="{{url('COCfour.png')}}" style="width:400px;height:200%"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Completion GO DIGITAL ASEAN issued by the Startup Malaysia, Ministry of Entrepreneur Development and Cooperative, Google Malaysia</p>
+    </div>
+    <div class='grid-item'>
+     <img src="{{url('COCfive.png')}}" style="width:400px;height:200%"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Participation International Webinar Series: Reseach Trend in Computing Science<br/>
+    (Affective Computing: Myth or Future Trend)</p>
+    </div>
+    <div class="grid-item">
+     <img src="{{url('COCsix.png')}}" style="width:400px;height:200%"/>
+     <p  style="font-weight:bold;font-size:24px"> Certificate of Attendance issued by MDEC and Intel<br>
+    (MDEC-Intel AI Academy)</p>
+    </div>
+    <div class="grid-item">
+      <img src="{{url('Certificate Introduction to R datacamp.png')}}" style="width:400px;height:200%"/>
+      <p  style="font-weight:bold;font-size:24px">Statement of Accomplishment issued by Datacamp<br/>
+      (Introduction to R) </p>
+     </div>
+     <div class="grid-item">
+      <img src="{{url('Certificate image Processing.png')}}" style="width:400px;height:200%"/>
+      <p  style="font-weight:bold;font-size:24px">Statement of Accomplishment issued by Datacamp<br/>
+      (Certificate Image Processing) </p>
+     </div>
+    </div>
+   </div>
   </div>
-
-  <p>CSS</p>
-  <div class="container">
-    <div class="skills css">80%</div>
-  </div>
-
-  <p>JavaScript</p>
-  <div class="container">
-    <div class="skills js">65%</div>
-  </div>
-
-  <p>PHP</p>
-  <div class="container">
-    <div class="skills php">60%</div>
-  </div>
-
-  <p>Java</p>
-  <div class="container">
-    <div class="skills java">90%</div>
-  </div>
-  <p>Object Oriented Programming</p>
-  <div class="container">
-    <div class="skills oop">90%</div>
-  </div>
-
-
-  <!-- End Page Container -->
-</div>
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
+ 
 
 </footer>
 

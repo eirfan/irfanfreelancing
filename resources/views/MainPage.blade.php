@@ -361,7 +361,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="w3-container">
-      <p>I-FUN is basically a logo I created as a symbol for all my self-projects and Freelancing, This page is useful if you want to discover what is Science Computer in the perspective of a student which is me.My vision is to introduce the real and advance technology to all Malaysian Science Computer Major Students, all this knowledge I got from joining multiple Online Courses and MOOC. Feel free to drop any comments here</p>
+      <p>I-FUN is basically an online portfolio which I created to tell more about all my self-projects and learning. Feel free to drop any comments here</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/resume'><b>ABOUT ME »</b></a></button></p>

@@ -580,7 +580,7 @@
  </div>
  <div class="ButtonContainer" id='buttoncontainer' style="display:none">
  <div class="Buttons">
-    <a class="Button"  style="text-decoration:none;" onclick="processVideo()">Start<span class="Button-mask Button-rotates rotates-c-clockwise Graident-two"></span></a>
+    <a class="Button" id="startbutton"  style="text-decoration:none;" onclick="takepicture()"><p id="startbuttontext">Start</p><span id="spanstart" class="Button-mask Button-rotates rotates-c-clockwise Graident-two"></span></a>
     </div>
     <a href='/' style="margin-top: 100px;font-size:16px;color:white">Guideline</a>
     <p style="margin-bottom:0px;padding-top:0px;font-size:24px;color:white">Number of images taken : <p style="font-size:46px;color:white;margin-top:0px" id='numberofimages'>0</p></p>
@@ -620,6 +620,9 @@
         var width=video.width;
         let imagenumber = 0;
         var imageface = null;
+        let startbuttonspan = document.getElementById("spanstart");
+        let startbutton = document.getElementById("startbutton");
+        let startbuttontext = document.getElementById("startbuttontext")
        
        function tryreadhere(){
            console.log("try read here clicked");
@@ -640,6 +643,7 @@
         takecbutton.style.display='none'
         buttoncontainer.style.display ='block';
         videocontainer.style.display = "block";
+        startbutton.disabled = true;
         var firebaseConfig = {
           apiKey : 'AIzaSyAy7CsmyS90kzk_YqwEXy_Kyt4wPXTu1lg',
           authDomain : 'studentattendance-8069d.firebaseapp.com',
@@ -680,7 +684,7 @@
            
            console.log("SRC height"+height);
            console.log("SRC width"+width);
-          // setTimeout(processVideo,2000)
+           setTimeout(processVideo,2000)
            
        }).catch(function(err){
            console.log("An error occured! +"+err);
@@ -701,9 +705,9 @@
         
         cap.read(src);
         cv.cvtColor(src,dst,cv.COLOR_BGR2GRAY);
-        try{
+       
            faceCascade.detectMultiScale(dst,faces,1.1,10,(64,64));
-           console.log("detecting face")
+           
            for (let i=0;i<faces.size();i++){
                let face =faces.get(i);
                let point1 = new cv.Point(face.x,face.y);
@@ -714,19 +718,21 @@
 
            }
            if(imageface != null){
-               if(imagenumber<=10){
+          
+            console.log("detecting face")
+           
             cv.imshow(canvas,imageface);
-           // takecbutton.disabled = false;
-           var imageURI = canvas.toDataURL();
+            takecbutton.disabled = false;
+            startbuttontext.innerHTML ="Take Picture"
+            startbuttonspan.className ="Button-mask Button-rotates rotates-c-clockwise Graident-two";
+            startbutton.disabled = "true"
+            var imageURI = canvas.toDataURL();
            var imageblob;
            var newtagimage = document.createElement("img");
            newtagimage.style.height=canvas.height;
            newtagimage.style.width = canvas.width;
-              newtagimage.src = imageURI
-              imagefacespace.appendChild(newtagimage);
-              
-           
-              
+           newtagimage.src = imageURI
+           imagefacespace.appendChild(newtagimage);
            fetch(imageURI).then(res => res.blob()).then(function(blob){
               
               console.log(blob);
@@ -738,41 +744,55 @@
            }).then(function(){
             imagenumber = imagenumber + 1; 
             numberofimages.innerHTML = imagenumber;
-            imageface.delete();
+            console.log("Done Saving picture to the firebase")
+            
            });
-        }
-        else{
-            numberofimage.innerHTML="Done taking image";
-        }
-           }else{
-               numberofimages.innerHTML = "cannot detect face"
-           }
-           
-           
-        
+                 
         console.log(imagenumber);
         
-        let delay = 1000/FPS - (Date.now() - begin);
-        setTimeout(processVideo,delay);
            
         }
-        catch(err){
-            if(imagenumber > 10){
-                
-            }else{
-            alert("Cannot detect face")}
+        else{
+            console.log("cannot detect face");
+            startbuttonspan.className = "Button-mask Button-rotates rotates-c-clockwise Graident-four"
+            startbutton.disabled = "true"
+            startbuttontext.innerHTML ="Cannot Detect face"
+            numberofimages.innerHTML = "cannot detect face, Please make sure to face the camera"
             //console.log(err)
             //numberofimages.innerHTML = err;
             console.log("Cannot detect face")
             context.clearRect(0,0,canvas.width,canvas.height);
             takecbutton.disabled = true;
-            let delay = 1000/FPS - (Date.now() - begin);
-            setTimeout(processVideo,delay)
+            
         }
+        
+        let delay = 1000/FPS - (Date.now() - begin);
+        imageface = null;
+        setTimeout(processVideo,delay);
 }  
 
 function takepicture(){
-   
+           var imageURI = canvas.toDataURL();
+           var imageblob;
+           var newtagimage = document.createElement("img");
+           newtagimage.style.height=canvas.height;
+           newtagimage.style.width = canvas.width;
+           newtagimage.src = imageURI
+           imagefacespace.appendChild(newtagimage);
+           fetch(imageURI).then(res => res.blob()).then(function(blob){
+              
+              console.log(blob);
+              console.log("detecting image");
+              var storageRef = firebase.storage().ref();
+              var studentImageRef = storageRef.child(valstudentname+'/'+valstudentname+imagenumber+'.jpg')
+             var uploadTask = studentImageRef.put(blob)
+            
+           }).then(function(){
+            imagenumber = imagenumber + 1; 
+            numberofimages.innerHTML = imagenumber;
+            console.log("Done Saving picture to the firebase")
+            
+           });
         
 }
      </script>
