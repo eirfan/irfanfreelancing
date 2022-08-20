@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/login', function () {
     return view('welcome');
 });
+Route::get('',function(){
+  return view('about');
+});
 
 Route :: resource('my','App\Http\Controllers\TaskController');
 //for some reason, we must specify App not app even the folder path said app

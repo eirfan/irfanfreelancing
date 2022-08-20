@@ -330,7 +330,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   
   <img src="{{url('I-FUN.png')}}" style='width:150px' />
 
-  <h1><b>MY Freelancing Blog</b></h1>
+  <h1><b>MY E-PORTFOLIO </b></h1>
   <p style='font-size:30px'id='firstanimation'></p>
   <p>Welcome to the live of <span class="w3-tag">Eirfanz</span></p>
   
@@ -364,7 +364,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <p>I-FUN is basically an online portfolio which I created to tell more about all my self-projects and learning. Feel free to drop any comments here</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/resume'><b>ABOUT ME »</b></a></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><a href='/'><b>ABOUT ME »</b></a></button></p>
         </div>
         
       </div>
@@ -532,7 +532,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <hr>
 
   <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
+  <!--<div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
       <h4>Skills</h4>
     </div>
@@ -545,6 +545,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </p>
     </div>
   </div>
+-->
 
 <!-- END Introduction Menu -->
 </div>
@@ -565,7 +566,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 <!-- Footer -->
-<div class=".container">
+<!--<div class=".container">
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
 
   <br/>
@@ -584,6 +585,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 </footer>
 </div>
+-->
 
 </body>
 </html>

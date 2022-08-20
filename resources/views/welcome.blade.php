@@ -18,6 +18,66 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                animation: rainbow-background 5s infinite
+            }
+            .introColor{
+               animation: rainbow-text 5s infinite;
+               text-align:center;
+               font-size: 120px;
+              
+               
+            }
+            .introColor:hover{
+                font-size:200px;
+                font-weight:bold;
+                cursor:hand;
+                
+            }
+            countDown{
+                transition: --num 5s;
+                counter-set:num var(--num);
+                font:800 120px system-ui;
+                margin:auto;
+                width:50%;
+                padding:10px;
+                display:flex;
+                justify-content:center;
+                
+                
+            }
+            countDown::after{
+                content:counter(num);
+                
+            }
+            
+            countDown:hover{
+                --num:100;
+                font:800 200px system-ui;
+                color:white
+            }
+            /*@keyframe is used for animation purposed 
+            1. The rainbow-background will control the color of the background 
+            2. The rainbow-text will control the color of the text*/
+            @keyframes rainbow-background{
+                0% {background-color: rgb(0, 0, 0)}
+                25%{background-color:#a0aec0}
+                50%{background-color:white}
+                75%{background-color:#4a5568}
+                100%{background-color:black;}
+                
+            }
+            @keyframes rainbow-text{
+                0% {color:white}
+                25%{color:#1a202c}
+                50%{color:black}
+                75%{color:#1a202c}
+                100%{color:white}
+            }
+
+            @property --num {
+                syntax:'<integer>';
+                initial-value:0;
+                inherits:false;
             }
         </style>
     </head>
@@ -28,10 +88,11 @@
 
 
 </div>
-<div id='screencapture' style="padding:10px;background:f5da55">
-  <h4 style="color:#000"> Hello World Bitching</h4>
-</div>
-
+<!-- <div id='screencapture' style=";padding:10px;background:f5da55">
+  
+ 
+</div>-->
+<countDown><h4 class="introColor">Welcome </h4></countDown> 
 
 
     </body>

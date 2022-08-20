@@ -250,7 +250,7 @@
 </head>
 <body>
     <header class="header-banner">
-        <div><p style="font-size: 50px;color:black;text-align:center">WORKSPACE, ARTICLE AND RESOURCES</p></div>
+        <div><p style="font-size: 50px;color:black;text-align:center">WORKSPACE, ARTICLE AND RESOURCES<br/>(In Progress)</p></div>
         <div id="idso8o" class="c10816">
           <div class="gjs-lory-frame c10841">
             <div class="gjs-lory-slides" id="icjjcj">
@@ -342,7 +342,7 @@
           </div>
         </div>
       </section>
-      <section class="am-sect">
+    <!--  <section class="am-sect">
         <div class="container-width">
           <div class="am-container">
             <div class="am-content">
@@ -357,7 +357,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
       <section class="blk-sect">
       </section>
       <section class="bdg-sect">

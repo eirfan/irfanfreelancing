@@ -67,6 +67,15 @@ function FirstAnimation(){
     )
 }
 
+function SecondAnimation(){
+    return(
+    <Typical
+    steps={['Welcome',2000,"Thank you for visiting my webiste",2000,"About will tell you a little summary about me",2000,"Feel free to check my projects",2000,"Education is important, maybe you should take a look at it",2000,"Interest should not be bad, I not just that nerd person",2000,"Wow, more award comming up",2000,"My E-portfolio, should be interesting"]}
+    loop={infinity}
+    wrapper="p"/>
+    )
+}
+
 
 
 
@@ -96,8 +105,13 @@ if(document.getElementById('savebutton')){
 }
 
 if(document.getElementById('firstanimation')){
-    console.log('Read First Animatiomn');
+    console.log('Read First Animation lorh');
     ReactDOM.render(<FirstAnimation />,document.getElementById('firstanimation'));
+}
+
+if(document.getElementById('secondanimation')){
+    console.log("Read second animation")
+    ReactDOM.render(<SecondAnimation/>,document.getElementById("secondanimation"))
 }
 
 
