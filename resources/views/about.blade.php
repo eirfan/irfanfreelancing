@@ -9,6 +9,7 @@
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
         <script src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/changecontent.js')}}" defer></script>
+        
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->

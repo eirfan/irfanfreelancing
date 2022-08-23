@@ -24,7 +24,9 @@ Route::get('/login', function () {
 Route::get('',function(){
   return view('about');
 });
-
+Route::get('/FaceRecognition',function(){
+  return view('FaceRecognition');
+});
 Route :: resource('my','App\Http\Controllers\TaskController');
 //for some reason, we must specify App not app even the folder path said app
 Route::get('/user','App\Http\Controllers\TaskController@index');
