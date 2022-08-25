@@ -663,8 +663,14 @@
                    if(xhttp.status == 200){
                        let data = new Uint8Array(xhttp.response);
                        cv.FS_createDataFile('/',faceCascadeFile,data,true,false,false);
-                       faceCascade.load(faceCascadeFile);
-                       console.log("succefully load "+faceCascadeFile+"status :"+xhttp.status);
+                       
+                       if(faceCascade.load(faceCascadeFile)){
+                        console.log("succefully load "+faceCascadeFile+"status :"+xhttp.status);
+                       }
+                       else{
+                        console.log("cannot load "+faceCascadeFile);
+                       }
+                      
                    }
                    else{
                        console.log("failed to load"+faceCascadeFile+"status : "+xhttp.status);
