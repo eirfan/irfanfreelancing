@@ -5,10 +5,13 @@
      
     </head>
     <body>
-        <div></div>
+        <div>
+            <p>face Recognition blade php</p>
+        </div>
         <canvas height="100%" width="100%" id='canvasFrame'></canvas>
-        <video style="display: none" id= 'videoInput'></video>
+        <video  id= 'videoInput'></video>
         <script defer type="text/javascript">
+        
          let video = document.getElementById("videoInput");
          let canvas = document.getElementById('canvasFrame');
          let context = canvas.getContext('2d');
@@ -29,7 +32,7 @@
          const FPS = 30;
           
           
-         function opencamera(){
+         
             
             navigator.mediaDevices.getUserMedia({video:true,audio:false}).then(function(stream){
                 video.srcObject = stream;
@@ -40,7 +43,7 @@
             }).catch(function(err){
                 console.log("Error : "+err);
             })
-         }
+         
 
          
 
@@ -108,7 +111,7 @@
             src = new cv.Mat(height,width,cv.CV_8UC4);
             dst = new cv.Mat(height,width,cv.CV_8UC1);
             faces = new cv.RectVector();  
-            opencamera();
+           // opencamera();
             
           }
         </script>

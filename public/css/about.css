@@ -572,6 +572,7 @@ progress {
 
 .list-inline-item {
   display: inline-block;
+  color:black
 }
 .list-inline-item:not(:last-child) {
   margin-right: 0.5rem;
@@ -689,6 +690,15 @@ progress {
   flex: 1 0 0%;
 }
 
+.rounded-radius{
+  border-radius:0px 25px 25px 0px;
+}
+
+.font-black{
+  color:black;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif
+}
 .row-cols-auto > * {
   flex: 0 0 auto;
   width: auto;
@@ -7361,6 +7371,7 @@ textarea.form-control-lg {
 .mb-0 {
   margin-bottom: 0 !important;
   font-size:60px;
+  color:white
 }
 
 .mb-1 {
@@ -7373,6 +7384,7 @@ textarea.form-control-lg {
 
 .mb-3 {
   margin-bottom: 1rem !important;
+  color:white
 }
 
 .mb-4 {
@@ -7381,6 +7393,8 @@ textarea.form-control-lg {
 
 .mb-5 {
   margin-bottom: 3rem !important;
+  font-family:'Times New Roman', Times, serif;
+  
 }
 
 .mb-auto {
@@ -11327,8 +11341,9 @@ p.lead {
 .subheading {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 100;
   font-size: 1.5rem;
+  font-style:italic;
 }
 
 #sideNav {

@@ -18,7 +18,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/about.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body id="page-top" style="background-color:black;width:100%">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"  style="background-color: black" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -27,10 +27,10 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <p style='font-size:30px;color:black'id='secondanimation'></p>
-            <div class="collapse navbar-collapse" style="background-color:black;border-radius:25px;padding:20px" id="navbarResponsive">
+            <div class="collapse navbar-collapse" style="background-color:black;border-radius:25px 0px 0px 25px;padding:20px" id="navbarResponsive">
                 <span class="d-block d-lg-none">IRFAN HAFIZ BIN IBRAHIM</span>
                 
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" >
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
@@ -42,7 +42,7 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container-fluid p-0">
+        <div class="container-fluid p-0" style="width:100%;float:left">
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
@@ -69,14 +69,14 @@
             </section>
             <hr class="m-0" />
             <!-- Experience-->
-            <section class="resume-section" style="background-color:wheat" id="experience">
+            <section class="resume-section bg-primary" style="background-color:white;width:auto;border-radius:0px 25px 25px 0px" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Projects</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0" >3D-FindMe Application Prototype</h3>
                             <div class="subheading mb-3">Technology Entepreneurs</div>
-                            <p>3D-FindMe apps is the ionic based apps that able to render the structure of the one supermarket to give the more detailed view to the customer. User use this system as a guidance for them to look for the specific item in the 3D view. It is a group assignment in UiTM and I have been choosen to handled 
+                            <p class="mb-3">3D-FindMe apps is the ionic based apps that able to render the structure of the one supermarket to give the more detailed view to the customer. User use this system as a guidance for them to look for the specific item in the 3D view. It is a group assignment in UiTM and I have been choosen to handled 
                                 the programming part where the rendered 3D model that being build by using Blender with be uploaded and rendered by using <b style="font-size:40px">three.js</b>. Three.js is a lightweight javascipt library that enable us to render any 3D objects
                             </p>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">AttenTrix</h3>
                             <div class="subheading mb-3">Student Attendance Management Application using Geofencing and Face Recognition</div>
-                            <p>AttenTrix is a high-tech application that able to take the attendance of the student based on face recognition and geofencing. The face recognition is build by using Convolutional Neural Network, CNN aspired by VGG16 Model 
+                            <p class="mb-3">AttenTrix is a high-tech application that able to take the attendance of the student based on face recognition and geofencing. The face recognition is build by using Convolutional Neural Network, CNN aspired by VGG16 Model 
                                The project is still on private respository as it still under development and therefore the project is considered as confidential. The project is build by using <b style="font-size:40px">Ionic React, Django python, Tensorflow and OpenCV</b>. 
                             </p>
                         </div>
@@ -96,7 +96,7 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Take Picture of the Student</h3>
                             <div class="subheading mb-3">Continued from AttenTrix</div>
-                            <p>When building a convolutional neural network, it is difficult to collect the image of students as the model require at least 1000 images per student. Therefore one website which using <b style="font-size:40px">laravel</b>and <b style="font-size:40px">opencv.js</b> is build and the link to the website is distributed to the students.
+                            <p class="mb-3">When building a convolutional neural network, it is difficult to collect the image of students as the model require at least 1000 images per student. Therefore one website which using <b style="font-size:40px">laravel</b>and <b style="font-size:40px">opencv.js</b> is build and the link to the website is distributed to the students.
                                 The student can open the website, fill in the information and take the image of themselve. The website will run the video and detect the face of the students. If the face is detected, the image will be saved to the firebase, else the video will continue taking the image of the students.
                             </p>
                         </div>
@@ -116,10 +116,10 @@
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
+                    <h2 class="mb-5" style="color:white">Education</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Mara University of Technology, UiTM</h3>
+                            <h3 class="mb-0" style="color:white">Mara University of Technology, UiTM</h3>
                             <div class="subheading mb-3">Bachelor of Computer</div>
                             <div>Computer Science(Hons.) - Big Data & Soft Computing</div>
                             <p>GPA: 3.78</p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Negeri Sembilan Matriculation College</h3>
+                            <h3 class="mb-0" style="color:white">Negeri Sembilan Matriculation College</h3>
                             <div class="subheading mb-3">TMatriculation</div>
                             <p>GPA: 3.96</p>
                         </div>
@@ -138,50 +138,39 @@
             </section>
             <hr class="m-0" />
             <!-- Skills-->
-            <section class="resume-section" style="background-color:wheat" id="skills">
+            <section class="resume-section bg-primary" style="background-color:wheat" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
                     <div class="subheading mb-3">Programming Languages & Tools</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-android"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-python"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-java"></i></li>
-                        <li class="list-inline-item"><i class = "fab fa-bootstrap"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-html5"></i>html</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i>CSS</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-js-square"></i>Javascript</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-react"></i>React</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-node-js"></i>Node js</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-android"></i>Android Development</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-python"></i>Python</li>
+                        <br/>
+                        <li class="list-inline-item"><i class="fab fa-java"></i>Java</li>
+                        <br/>
+                        <li class="list-inline-item"><i class = "fab fa-bootstrap"></i>Bootstrap</li>
                     </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile Development Life Cycle
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Browser Testing & Debugging
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Functional Teams
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Agile Development 
-                        </li>
-                    </ul>
-                </div>
+                    
             </section>
             <hr class="m-0" />
             <!-- Interests-->
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being an excellence student in academic, I also enjoy spending time being outdoors. I love to play sport with my friends such as football, badminton, bowling and et cetera. 
-                        I also known as someone who is actively participate in co-curriculum activity as I being selected as a secretary of Jasin Robotic Club known as JRC and vice president of Computer Science Association,CSA in UiTM.
+                    <h2 class="mb-5" style="color:white">Interests</h2>
+                    <p ><article style="font-size:20px">Apart from being an excellence student in academic, I also enjoy spending time being outdoors. I love to play sport with my friends such as football, badminton, bowling and et cetera. 
+                        I also known as someone who is actively participate in co-curriculum activity as I being selected as a <b style="color:white;font-family:'Times New Roman">Secretary</b> of Jasin Robotic Club known as JRC and <b style="color:white;font-family:'Times New Roman"">vice president</b> of Computer Science Association,CSA in UiTM.
+                    </article>
                     </p>
                     <p class="mb-0"><article style="font-size:25px">I have been organizing a lot of universiti event and competition such as sumo robot competition and hackathon. During the process, I also known as team player as I always share and critics the idea during
                         the brainstorm season, I try my best to lead the team to guarantee the success of the program. I am also a social person which I love spend some time bonding with my colleagues and friends as I believe
@@ -192,37 +181,41 @@
             </section>
             <hr class="m-0" />
             <!-- Awards-->
-            <section class="resume-section" id="awards">
+            <section class="resume-section bg-primary rounded-radius"  id="awards">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <h2 class="mb-5" style="color:black">Awards & Certifications</h2>
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            MDEC Intel AI Academy
+                            <p class="font-black">MDEC Intel AI Academy</p>
+                            <img  src="{{url('COCsix.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Kaggle Computer Vision
+                            <p class="font-black">Kaggle Computer Vision</p>
+                            <img  src="{{url('COCseven.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                            
-                            Certificate of the Data Scientist Toolbox
+                           <p class="font-black">Certificate of the Data Scientist Toolbox</p>
+                            <img  src="{{url('The Data Scientist Toolbox.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                           
-                            Excellence SPM Student Award
+                            <p class="font-black">Excellence SPM Straight A's Student award 2017</p>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             
-                           Datacamp Image Processing with Keras in Python
+                           <p class="font-black">Datacamp Image Processing with Keras in Python</p>
+                           <img  src="{{url('Certificate Image Processing.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                            
-                            Datacamp Data Visualization with Matplotlib
+                            <p class="font-black">Data Mining MOOC UiTM Completion Course</p>
+                            <img  src="{{url('COCthree.png')}}" style="margin-top:50px;margin-left:20px;width:400px; height:200%;"/>
                         </li>
                        
                     </ul>
