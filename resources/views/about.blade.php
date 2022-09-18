@@ -8,8 +8,9 @@
         <title>Resume - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <script src="{{asset('https://irfanfreelancer.herokuapp.com/js/app.js')}}" defer></script>
-        <script src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/changecontent.js')}}" defer></script>
-        
+        <script type="text/javascript" src="{{URL::asset('https://irfanfreelancer.herokuapp.com/js/changecontent.js')}}" defer>
+        </script>
+        <script src="{{URL::asset('js/automaticcontent.js')}}" async></script>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -18,12 +19,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/about.css" rel="stylesheet" />
     </head>
+    
     <body id="page-top" style="background-color:black;width:100%">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"  style="background-color: black" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">IRFAN HAFIZ BIN IBRAHIM</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src={{url('irfan.jpg')}} alt="..." /></span>
+                <span class="d-block d-lg-none ">IRFAN HAFIZ BIN IBRAHIM</span>
+                <img class="profile-animation img-fluid img-profile rounded-circle mx-auto mb-2" src={{url('irfan.jpg')}} alt="..." />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <p style='font-size:30px;color:black'id='secondanimation'></p>
@@ -46,8 +48,65 @@
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
-                    <h1 class="mb-0">
+                    <div class="first-circle">
+                        <!--To make the circle animation, we will 
+                        need two circle, first is parent circle and second is child circle
+                    1. The parent circle will have these properties:
+                        .first-circle{
+                                      background-color:black;
+                                      height:100px;
+                                      width:100px;
+                                      border-radius:50%;
+                                      display:inline-block;
+                                      border-color:white;
+                                      border-style:solid;
+                                      animation-name:circle-one-animation;
+                                      animation-duration:6s;
+                                      animation-iteration-count: infinite;
+                                      animation-timing-function: linear;
+                                     }
+                    2. The child circle will have these properties :
+                        .second-circle{
+                                      background-color:black;
+                                      height:25px;
+                                      border-style:solid;
+                                      border-color:black;
+                                      position:center;
+                                      margin:auto;
+                                      overflow:hidden;
+                                      width:25px;
+                                      border-radius:50%;
+                                      display:inline-block;
+                                      animation-name:circle-two-animation;
+                                      animation-duration: 6s;
+                                      animation-iteration-count:infinite;
+                                      animation-timing-function: linear;
+                                      }
+                    3. The keyframes animation will be required for both parent and child circle
+                    4. The keyframes for parents circle: 
+                          @keyframes circle-one-animation{
+                                      0%{transform:rotate(0deg)}
+                                      100% {transform:rotate(360deg)}
+                                    }
+                    5. The keyframes for chilc circle :
+                          @keyframes circle-two-animation{
+                                      0%{transform:rotate(0deg);}
+                                      100%{transform:rotate(-6deg);}
+                                    }
+                -->
+                   <div class="second-circle">
+                   </div> 
+                    </div>
+                 
+                    <h1 class="blur-text">
+                        <pe>Welcome</pe>
+                        <pe>To</pe>
+                        <pe>EirfanZ</pe>
+                        <pe>CyberSpace</pe>
                         
+                    </h1>
+                    <h1 class="mb-0" id="txt-1" style="display:none">
+                        <br/>
                         IRFAN HAFIZ 
                         <span class="text-primary">IBRAHIM</span>
                     </h1>
@@ -105,8 +164,10 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Healthy Life Tracker</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                            <div class="subheading mb-3">Web application to maintain healty lifestyle</div>
+                            <p class="mb-3">Healthy life tracker is a website that allow user to calculate their Body Mass Index, BMI. Furthermore, based on the BMI status, the system will suggest the healthy diet that is suitable for the user. This is the simple if-else system without any implementation of algorithm
+                                . The project is submitted as the report for one of the courses in Bachelor Degree of Computer Science(Hons).
+                            </p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
                     </div>
